@@ -1,0 +1,1442 @@
+[
+  {
+    "id": "T1-01",
+    "type": "development",
+    "tier": 1,
+    "name": "Rei Ayanami",
+    "image": "/card-assets/Tier1/T1_01_043_Rei_Ayanami.png",
+    "points": 0,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 1,
+      "diamond": 1,
+      "emerald": 1,
+      "gold": 1,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-02",
+    "type": "development",
+    "tier": 1,
+    "name": "Echidna",
+    "image": "/card-assets/Tier1/T1_02_065_Echidna.png",
+    "points": 0,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 1,
+      "diamond": 1,
+      "emerald": 1,
+      "gold": 2,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-03",
+    "type": "development",
+    "tier": 1,
+    "name": "Maomao",
+    "image": "/card-assets/Tier1/T1_03_067_Maomao.png",
+    "points": 0,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 2,
+      "diamond": 0,
+      "emerald": 1,
+      "gold": 2,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-04",
+    "type": "development",
+    "tier": 1,
+    "name": "Furina",
+    "image": "/card-assets/Tier1/T1_04_068_Furina.png",
+    "points": 0,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 0,
+      "diamond": 1,
+      "emerald": 0,
+      "gold": 3,
+      "netherite": 1
+    }
+  },
+  {
+    "id": "T1-05",
+    "type": "development",
+    "tier": 1,
+    "name": "Tatsumaki",
+    "image": "/card-assets/Tier1/T1_05_069_Tatsumaki.png",
+    "points": 0,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 2,
+      "gold": 1,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-06",
+    "type": "development",
+    "tier": 1,
+    "name": "Tsunade",
+    "image": "/card-assets/Tier1/T1_06_070_Tsunade.png",
+    "points": 0,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 2,
+      "diamond": 0,
+      "emerald": 2,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-07",
+    "type": "development",
+    "tier": 1,
+    "name": "Lucy Heartfilia",
+    "image": "/card-assets/Tier1/T1_07_071_Lucy_Heartfilia.png",
+    "points": 0,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 3,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-08",
+    "type": "development",
+    "tier": 1,
+    "name": "Yuno Gasai",
+    "image": "/card-assets/Tier1/T1_08_072_Yuno_Gasai.png",
+    "points": 1,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 0,
+      "diamond": 4,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-09",
+    "type": "development",
+    "tier": 1,
+    "name": "Ai Hayasaka",
+    "image": "/card-assets/Tier1/T1_09_074_Ai_Hayasaka.png",
+    "points": 0,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 1,
+      "diamond": 0,
+      "emerald": 1,
+      "gold": 1,
+      "netherite": 1
+    }
+  },
+  {
+    "id": "T1-10",
+    "type": "development",
+    "tier": 1,
+    "name": "Itsuki Nakano",
+    "image": "/card-assets/Tier1/T1_10_075_Itsuki_Nakano.png",
+    "points": 0,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 1,
+      "diamond": 0,
+      "emerald": 1,
+      "gold": 2,
+      "netherite": 1
+    }
+  },
+  {
+    "id": "T1-11",
+    "type": "development",
+    "tier": 1,
+    "name": "Hestia",
+    "image": "/card-assets/Tier1/T1_11_076_Hestia.png",
+    "points": 0,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 1,
+      "diamond": 0,
+      "emerald": 2,
+      "gold": 2,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-12",
+    "type": "development",
+    "tier": 1,
+    "name": "Kyouko Hori",
+    "image": "/card-assets/Tier1/T1_12_077_Kyouko_Hori.png",
+    "points": 0,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 0,
+      "diamond": 1,
+      "emerald": 3,
+      "gold": 1,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-13",
+    "type": "development",
+    "tier": 1,
+    "name": "Yae Miko",
+    "image": "/card-assets/Tier1/T1_13_078_Yae_Miko.png",
+    "points": 0,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 1,
+      "diamond": 2,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-14",
+    "type": "development",
+    "tier": 1,
+    "name": "Fubuki",
+    "image": "/card-assets/Tier1/T1_14_080_Fubuki.png",
+    "points": 0,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 2,
+      "diamond": 0,
+      "emerald": 2,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-15",
+    "type": "development",
+    "tier": 1,
+    "name": "Touka Kirishima",
+    "image": "/card-assets/Tier1/T1_15_081_Touka_Kirishima.png",
+    "points": 0,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 0,
+      "diamond": 3,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-16",
+    "type": "development",
+    "tier": 1,
+    "name": "Rikka Takanashi",
+    "image": "/card-assets/Tier1/T1_16_084_Rikka_Takanashi.png",
+    "points": 1,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 4,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-17",
+    "type": "development",
+    "tier": 1,
+    "name": "Ai Hoshino",
+    "image": "/card-assets/Tier1/T1_17_085_Ai_Hoshino.png",
+    "points": 0,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 1,
+      "emerald": 1,
+      "gold": 1,
+      "netherite": 1
+    }
+  },
+  {
+    "id": "T1-18",
+    "type": "development",
+    "tier": 1,
+    "name": "Lucy",
+    "image": "/card-assets/Tier1/T1_18_086_Lucy.png",
+    "points": 0,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 1,
+      "emerald": 2,
+      "gold": 1,
+      "netherite": 1
+    }
+  },
+  {
+    "id": "T1-19",
+    "type": "development",
+    "tier": 1,
+    "name": "Madoka Kaname",
+    "image": "/card-assets/Tier1/T1_19_088_Madoka_Kaname.png",
+    "points": 0,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 2,
+      "emerald": 2,
+      "gold": 0,
+      "netherite": 1
+    }
+  },
+  {
+    "id": "T1-20",
+    "type": "development",
+    "tier": 1,
+    "name": "Yotsuba Nakano",
+    "image": "/card-assets/Tier1/T1_20_089_Yotsuba_Nakano.png",
+    "points": 0,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 1,
+      "diamond": 1,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 3
+    }
+  },
+  {
+    "id": "T1-21",
+    "type": "development",
+    "tier": 1,
+    "name": "Hitori Gotou",
+    "image": "/card-assets/Tier1/T1_21_090_Hitori_Gotou.png",
+    "points": 0,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 1,
+      "emerald": 0,
+      "gold": 2,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-22",
+    "type": "development",
+    "tier": 1,
+    "name": "Ichigo",
+    "image": "/card-assets/Tier1/T1_22_091_Ichigo.png",
+    "points": 0,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 2,
+      "diamond": 2,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-23",
+    "type": "development",
+    "tier": 1,
+    "name": "Fern",
+    "image": "/card-assets/Tier1/T1_23_094_Fern.png",
+    "points": 0,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 3,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-24",
+    "type": "development",
+    "tier": 1,
+    "name": "Chizuru Ichinose",
+    "image": "/card-assets/Tier1/T1_24_096_Chizuru_Ichinose.png",
+    "points": 1,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 4,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-25",
+    "type": "development",
+    "tier": 1,
+    "name": "Aiz Wallenstein",
+    "image": "/card-assets/Tier1/T1_25_Aiz%20Wallenstein.png",
+    "points": 0,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 1,
+      "diamond": 1,
+      "emerald": 0,
+      "gold": 1,
+      "netherite": 1
+    }
+  },
+  {
+    "id": "T1-26",
+    "type": "development",
+    "tier": 1,
+    "name": "Alice Synthesis Thirty",
+    "image": "/card-assets/Tier1/T1_26_Alice%20Synthesis%20Thirty.png",
+    "points": 0,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 1,
+      "diamond": 1,
+      "emerald": 0,
+      "gold": 1,
+      "netherite": 2
+    }
+  },
+  {
+    "id": "T1-27",
+    "type": "development",
+    "tier": 1,
+    "name": "Alice Nakiri",
+    "image": "/card-assets/Tier1/T1_27_Alice_Nakiri.png",
+    "points": 0,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 2,
+      "diamond": 1,
+      "emerald": 0,
+      "gold": 2,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-28",
+    "type": "development",
+    "tier": 1,
+    "name": "Bronya",
+    "image": "/card-assets/Tier1/T1_28_Bronya.png",
+    "points": 0,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 1,
+      "diamond": 0,
+      "emerald": 3,
+      "gold": 1,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-29",
+    "type": "development",
+    "tier": 1,
+    "name": "Cha Hae-In",
+    "image": "/card-assets/Tier1/T1_29_Cha%20Hae-In.png",
+    "points": 0,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 1,
+      "gold": 0,
+      "netherite": 2
+    }
+  },
+  {
+    "id": "T1-30",
+    "type": "development",
+    "tier": 1,
+    "name": "Chitoge Kirisaki",
+    "image": "/card-assets/Tier1/T1_30_Chitoge%20Kirisaki.png",
+    "points": 0,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 0,
+      "diamond": 2,
+      "emerald": 0,
+      "gold": 2,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-31",
+    "type": "development",
+    "tier": 1,
+    "name": "Columbina",
+    "image": "/card-assets/Tier1/T1_31_Columbina.png",
+    "points": 0,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 3,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-32",
+    "type": "development",
+    "tier": 1,
+    "name": "homani Ichinose",
+    "image": "/card-assets/Tier1/T1_32_homani_Ichinose.png",
+    "points": 1,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 4
+    }
+  },
+  {
+    "id": "T1-33",
+    "type": "development",
+    "tier": 1,
+    "name": "Kaoruko Waguri",
+    "image": "/card-assets/Tier1/T1_33_Kaoruko%20Waguri.png",
+    "points": 0,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 1,
+      "diamond": 1,
+      "emerald": 1,
+      "gold": 0,
+      "netherite": 1
+    }
+  },
+  {
+    "id": "T1-34",
+    "type": "development",
+    "tier": 1,
+    "name": "Krul Tepes",
+    "image": "/card-assets/Tier1/T1_34_Krul%20Tepes.png",
+    "points": 0,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 2,
+      "diamond": 1,
+      "emerald": 1,
+      "gold": 0,
+      "netherite": 1
+    }
+  },
+  {
+    "id": "T1-35",
+    "type": "development",
+    "tier": 1,
+    "name": "Mashiro Shiina",
+    "image": "/card-assets/Tier1/T1_35_Mashiro%20Shiina.png",
+    "points": 0,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 2,
+      "diamond": 0,
+      "emerald": 1,
+      "gold": 0,
+      "netherite": 2
+    }
+  },
+  {
+    "id": "T1-36",
+    "type": "development",
+    "tier": 1,
+    "name": "Milim Nava",
+    "image": "/card-assets/Tier1/T1_36_Milim%20Nava.png",
+    "points": 0,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 1,
+      "diamond": 3,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 1
+    }
+  },
+  {
+    "id": "T1-37",
+    "type": "development",
+    "tier": 1,
+    "name": "Ruby Hoshino",
+    "image": "/card-assets/Tier1/T1_37_Ruby%20Hoshino.png",
+    "points": 0,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 2,
+      "gold": 1,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T1-38",
+    "type": "development",
+    "tier": 1,
+    "name": "Shinoa Hiiragi",
+    "image": "/card-assets/Tier1/T1_38_Shinoa%20Hiiragi.png",
+    "points": 0,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 0,
+      "diamond": 2,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 2
+    }
+  },
+  {
+    "id": "T1-39",
+    "type": "development",
+    "tier": 1,
+    "name": "Vladilena Milizé",
+    "image": "/card-assets/Tier1/T1_39_Vladilena%20Miliz%C3%A9.png",
+    "points": 0,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 3
+    }
+  },
+  {
+    "id": "T1-40",
+    "type": "development",
+    "tier": 1,
+    "name": "Yunyun",
+    "image": "/card-assets/Tier1/T1_40_Yunyun.png",
+    "points": 1,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 4
+    }
+  },
+  {
+    "id": "T2-01",
+    "type": "development",
+    "tier": 2,
+    "name": "Hinata Hyuuga",
+    "image": "/card-assets/Tier2/T2_01_032_Hinata_Hyuuga.png",
+    "points": 1,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 3,
+      "diamond": 2,
+      "emerald": 2,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T2-02",
+    "type": "development",
+    "tier": 2,
+    "name": "Rin Tohsaka",
+    "image": "/card-assets/Tier2/T2_02_033_Rin_Tohsaka.png",
+    "points": 1,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 3,
+      "diamond": 2,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 2
+    }
+  },
+  {
+    "id": "T2-03",
+    "type": "development",
+    "tier": 2,
+    "name": "Shiro",
+    "image": "/card-assets/Tier2/T2_03_034_Shiro.png",
+    "points": 2,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 0,
+      "diamond": 1,
+      "emerald": 4,
+      "gold": 2,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T2-04",
+    "type": "development",
+    "tier": 2,
+    "name": "Chika Fujiwara",
+    "image": "/card-assets/Tier2/T2_04_035_Chika_Fujiwara.png",
+    "points": 2,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 5,
+      "gold": 3,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T2-05",
+    "type": "development",
+    "tier": 2,
+    "name": "Akeno Himejima",
+    "image": "/card-assets/Tier2/T2_05_036_Akeno_Himejima.png",
+    "points": 2,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 5,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T2-06",
+    "type": "development",
+    "tier": 2,
+    "name": "Kaguya Shinomiya",
+    "image": "/card-assets/Tier2/T2_06_038_Kaguya_Shinomiya.png",
+    "points": 3,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 6
+    }
+  },
+  {
+    "id": "T2-07",
+    "type": "development",
+    "tier": 2,
+    "name": "Yor Forger",
+    "image": "/card-assets/Tier2/T2_07_039_Yor_Forger.png",
+    "points": 1,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 0,
+      "diamond": 2,
+      "emerald": 2,
+      "gold": 3,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T2-08",
+    "type": "development",
+    "tier": 2,
+    "name": "Erza Scarlet",
+    "image": "/card-assets/Tier2/T2_08_040_Erza_Scarlet.png",
+    "points": 1,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 0,
+      "diamond": 3,
+      "emerald": 2,
+      "gold": 0,
+      "netherite": 3
+    }
+  },
+  {
+    "id": "T2-09",
+    "type": "development",
+    "tier": 2,
+    "name": "Kurumi Tokisaki",
+    "image": "/card-assets/Tier2/T2_09_041_Kurumi_Tokisaki.png",
+    "points": 2,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 5,
+      "diamond": 0,
+      "emerald": 3,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T2-10",
+    "type": "development",
+    "tier": 2,
+    "name": "Darkness",
+    "image": "/card-assets/Tier2/T2_10_042_Darkness.png",
+    "points": 2,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 2,
+      "diamond": 4,
+      "emerald": 0,
+      "gold": 1,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T2-11",
+    "type": "development",
+    "tier": 2,
+    "name": "Mitsuri Kanroji",
+    "image": "/card-assets/Tier2/T2_11_046_Mitsuri_Kanroji.png",
+    "points": 2,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 5,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T2-12",
+    "type": "development",
+    "tier": 2,
+    "name": "Raphtalia",
+    "image": "/card-assets/Tier2/T2_12_047_Raphtalia.png",
+    "points": 3,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 6,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T2-13",
+    "type": "development",
+    "tier": 2,
+    "name": "CC",
+    "image": "/card-assets/Tier2/T2_13_048_CC.png",
+    "points": 1,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 3,
+      "gold": 2,
+      "netherite": 2
+    }
+  },
+  {
+    "id": "T2-14",
+    "type": "development",
+    "tier": 2,
+    "name": "Sinon",
+    "image": "/card-assets/Tier2/T2_14_049_Sinon.png",
+    "points": 1,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 2,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 3,
+      "netherite": 3
+    }
+  },
+  {
+    "id": "T2-15",
+    "type": "development",
+    "tier": 2,
+    "name": "Ganyu",
+    "image": "/card-assets/Tier2/T2_15_050_Ganyu.png",
+    "points": 2,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 1,
+      "gold": 4,
+      "netherite": 2
+    }
+  },
+  {
+    "id": "T2-16",
+    "type": "development",
+    "tier": 2,
+    "name": "Komi Shouko",
+    "image": "/card-assets/Tier2/T2_16_051_Komi_Shouko.png",
+    "points": 2,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 3,
+      "emerald": 0,
+      "gold": 5,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T2-17",
+    "type": "development",
+    "tier": 2,
+    "name": "Tohru",
+    "image": "/card-assets/Tier2/T2_17_052_Tohru.png",
+    "points": 2,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 5
+    }
+  },
+  {
+    "id": "T2-18",
+    "type": "development",
+    "tier": 2,
+    "name": "Gawr Gura",
+    "image": "/card-assets/Tier2/T2_18_053_Gawr_Gura.png",
+    "points": 3,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 6
+    }
+  },
+  {
+    "id": "T2-19",
+    "type": "development",
+    "tier": 2,
+    "name": "Misa Amane",
+    "image": "/card-assets/Tier2/T2_19_057_Misa_Amane.png",
+    "points": 1,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 3,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 3,
+      "netherite": 2
+    }
+  },
+  {
+    "id": "T2-20",
+    "type": "development",
+    "tier": 2,
+    "name": "Kanna Kamui",
+    "image": "/card-assets/Tier2/T2_20_059_Kanna_Kamui.png",
+    "points": 1,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 2,
+      "diamond": 3,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 2
+    }
+  },
+  {
+    "id": "T2-21",
+    "type": "development",
+    "tier": 2,
+    "name": "Asuka Langley Soryu",
+    "image": "/card-assets/Tier2/T2_21_061_Asuka_Langley_Soryu.png",
+    "points": 2,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 0,
+      "diamond": 2,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 4
+    }
+  },
+  {
+    "id": "T2-22",
+    "type": "development",
+    "tier": 2,
+    "name": "Eris Boreas Greyrat",
+    "image": "/card-assets/Tier2/T2_22_Eris%20Boreas%20Greyrat.png",
+    "points": 2,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 5,
+      "gold": 3,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T2-23",
+    "type": "development",
+    "tier": 2,
+    "name": "Ichika Nanako",
+    "image": "/card-assets/Tier2/T2_23_Ichika_Nanako.png",
+    "points": 2,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 0,
+      "diamond": 5,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T2-24",
+    "type": "development",
+    "tier": 2,
+    "name": "Kiana Kaslana",
+    "image": "/card-assets/Tier2/T2_24_Kiana_Kaslana.png",
+    "points": 3,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 6,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T2-25",
+    "type": "development",
+    "tier": 2,
+    "name": "Kosaki Onodera",
+    "image": "/card-assets/Tier2/T2_25_Kosaki%20Onodera.png",
+    "points": 1,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 2,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 2,
+      "netherite": 3
+    }
+  },
+  {
+    "id": "T2-26",
+    "type": "development",
+    "tier": 2,
+    "name": "Nao Tomori",
+    "image": "/card-assets/Tier2/T2_26_Nao_Tomori.png",
+    "points": 1,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 2,
+      "diamond": 0,
+      "emerald": 3,
+      "gold": 0,
+      "netherite": 3
+    }
+  },
+  {
+    "id": "T2-27",
+    "type": "development",
+    "tier": 2,
+    "name": "Raiden Mei",
+    "image": "/card-assets/Tier2/T2_27_Raiden_Mei.png",
+    "points": 2,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 1,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 4,
+      "netherite": 2
+    }
+  },
+  {
+    "id": "T2-28",
+    "type": "development",
+    "tier": 2,
+    "name": "Roxy Migurdia",
+    "image": "/card-assets/Tier2/T2_28_Roxy%20Migurdia.png",
+    "points": 2,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 3,
+      "netherite": 5
+    }
+  },
+  {
+    "id": "T2-29",
+    "type": "development",
+    "tier": 2,
+    "name": "sylphiette greyrat",
+    "image": "/card-assets/Tier2/T2_29_sylphiette%20greyrat.png",
+    "points": 2,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 5
+    }
+  },
+  {
+    "id": "T2-30",
+    "type": "development",
+    "tier": 2,
+    "name": "Wiz",
+    "image": "/card-assets/Tier2/T2_30_Wiz.png",
+    "points": 3,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 6,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T3-01",
+    "type": "development",
+    "tier": 3,
+    "name": "Ram redrawn",
+    "image": "/card-assets/Tier3/T3_01_010_Ram_redrawn.png",
+    "points": 3,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 3,
+      "diamond": 3,
+      "emerald": 5,
+      "gold": 3,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T3-02",
+    "type": "development",
+    "tier": 3,
+    "name": "Nezuko Kamado redrawn",
+    "image": "/card-assets/Tier3/T3_02_013_Nezuko_Kamado_redrawn.png",
+    "points": 4,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 7,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T3-03",
+    "type": "development",
+    "tier": 3,
+    "name": "Mai Sakurajima redrawn",
+    "image": "/card-assets/Tier3/T3_03_014_Mai_Sakurajima_redrawn.png",
+    "points": 4,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 3,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 6,
+      "netherite": 3
+    }
+  },
+  {
+    "id": "T3-04",
+    "type": "development",
+    "tier": 3,
+    "name": "Albedo redrawn",
+    "image": "/card-assets/Tier3/T3_04_015_Albedo_redrawn.png",
+    "points": 5,
+    "bonus": "netherite",
+    "cost": {
+      "quartz": 3,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 7,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T3-05",
+    "type": "development",
+    "tier": 3,
+    "name": "Aqua redrawn",
+    "image": "/card-assets/Tier3/T3_05_016_Aqua_redrawn.png",
+    "points": 3,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 3,
+      "diamond": 0,
+      "emerald": 3,
+      "gold": 3,
+      "netherite": 5
+    }
+  },
+  {
+    "id": "T3-06",
+    "type": "development",
+    "tier": 3,
+    "name": "Emilia redrawn",
+    "image": "/card-assets/Tier3/T3_06_018_Emilia_redrawn.png",
+    "points": 4,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 7,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T3-07",
+    "type": "development",
+    "tier": 3,
+    "name": "2B redrawn",
+    "image": "/card-assets/Tier3/T3_07_019_2B_redrawn.png",
+    "points": 4,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 6,
+      "diamond": 3,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 3
+    }
+  },
+  {
+    "id": "T3-08",
+    "type": "development",
+    "tier": 3,
+    "name": "Miku Nakano redrawn",
+    "image": "/card-assets/Tier3/T3_08_020_Miku_Nakano_redrawn.png",
+    "points": 5,
+    "bonus": "diamond",
+    "cost": {
+      "quartz": 7,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 3
+    }
+  },
+  {
+    "id": "T3-09",
+    "type": "development",
+    "tier": 3,
+    "name": "Akame",
+    "image": "/card-assets/Tier3/T3_09_021_Akame.png",
+    "points": 3,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 3,
+      "emerald": 3,
+      "gold": 3,
+      "netherite": 5
+    }
+  },
+  {
+    "id": "T3-10",
+    "type": "development",
+    "tier": 3,
+    "name": "Violet Evergarden",
+    "image": "/card-assets/Tier3/T3_10_023_Violet_Evergarden.png",
+    "points": 4,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 7
+    }
+  },
+  {
+    "id": "T3-11",
+    "type": "development",
+    "tier": 3,
+    "name": "hu tao",
+    "image": "/card-assets/Tier3/T3_11_024_hu_tao.png",
+    "points": 4,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 3,
+      "diamond": 6,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 3
+    }
+  },
+  {
+    "id": "T3-12",
+    "type": "development",
+    "tier": 3,
+    "name": "Esdeath",
+    "image": "/card-assets/Tier3/T3_12_025_Esdeath.png",
+    "points": 5,
+    "bonus": "quartz",
+    "cost": {
+      "quartz": 0,
+      "diamond": 7,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 3
+    }
+  },
+  {
+    "id": "T3-13",
+    "type": "development",
+    "tier": 3,
+    "name": "Frieren",
+    "image": "/card-assets/Tier3/T3_13_026_Frieren.png",
+    "points": 3,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 5,
+      "diamond": 3,
+      "emerald": 0,
+      "gold": 3,
+      "netherite": 3
+    }
+  },
+  {
+    "id": "T3-14",
+    "type": "development",
+    "tier": 3,
+    "name": "Marin Kitagawa",
+    "image": "/card-assets/Tier3/T3_14_027_Marin_Kitagawa.png",
+    "points": 4,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 0,
+      "diamond": 7,
+      "emerald": 0,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T3-15",
+    "type": "development",
+    "tier": 3,
+    "name": "Himiko Toga",
+    "image": "/card-assets/Tier3/T3_15_028_Himiko_Toga.png",
+    "points": 4,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 3,
+      "diamond": 3,
+      "emerald": 6,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T3-16",
+    "type": "development",
+    "tier": 3,
+    "name": "Reze",
+    "image": "/card-assets/Tier3/T3_16_029_Reze.png",
+    "points": 5,
+    "bonus": "emerald",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 7,
+      "gold": 3,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T3-17",
+    "type": "development",
+    "tier": 3,
+    "name": "Yumeko Jabami",
+    "image": "/card-assets/Tier3/T3_17_030_Yumeko_Jabami.png",
+    "points": 3,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 3,
+      "diamond": 3,
+      "emerald": 3,
+      "gold": 0,
+      "netherite": 5
+    }
+  },
+  {
+    "id": "T3-18",
+    "type": "development",
+    "tier": 3,
+    "name": "Nino Nakano",
+    "image": "/card-assets/Tier3/T3_18_031_Nino_Nakano.png",
+    "points": 4,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 0,
+      "diamond": 0,
+      "emerald": 7,
+      "gold": 0,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T3-19",
+    "type": "development",
+    "tier": 3,
+    "name": "Kafka",
+    "image": "/card-assets/Tier3/T3_19_105_Kafka.png",
+    "points": 4,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 3,
+      "diamond": 0,
+      "emerald": 3,
+      "gold": 6,
+      "netherite": 0
+    }
+  },
+  {
+    "id": "T3-20",
+    "type": "development",
+    "tier": 3,
+    "name": "Elysia",
+    "image": "/card-assets/Tier3/T3_20_Elysia.png",
+    "points": 5,
+    "bonus": "gold",
+    "cost": {
+      "quartz": 0,
+      "diamond": 3,
+      "emerald": 7,
+      "gold": 0,
+      "netherite": 0
+    }
+  }
+]

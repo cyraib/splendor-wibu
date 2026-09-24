@@ -1,0 +1,546 @@
+LUẬT SPLENDOR – BASE GAME (2–4 NGƯỜI)
+
+1. MỤC TIÊU
+Người chơi thu thập đá quý để mua Development Cards (Thẻ Phát triển). Các thẻ đã mua cung cấp:
+- Bonus đá vĩnh viễn để giảm chi phí mua thẻ sau.
+- Một số thẻ cho Prestige Points (Điểm Danh vọng).
+- Bonus đá giúp đạt điều kiện nhận Noble (Quý tộc).
+
+Khi một người đạt từ 15 điểm trở lên, game bước vào vòng cuối. Sau khi tất cả người chơi đã có cùng số lượt, người có nhiều điểm nhất thắng.
+
+2. THÀNH PHẦN GAME
+Token:
+- 7 Emerald – Xanh lá
+- 7 Sapphire – Xanh dương
+- 7 Ruby – Đỏ
+- 7 Diamond – Trắng
+- 7 Onyx – Đen
+- 5 Gold – Vàng/Joker
+
+Development Cards:
+- Tier 1: 40 thẻ
+- Tier 2: 30 thẻ
+- Tier 3: 20 thẻ
+
+Noble:
+- 10 Quý tộc
+
+Tổng cộng:
+- 90 Development Cards
+- 40 token
+
+Gold không phải một màu đá thông thường. Gold là Joker.
+
+3. SETUP
+Ba bộ Development Card được xáo riêng:
+- Tier 1
+- Tier 2
+- Tier 3
+
+Mỗi Tier lật 4 lá ngửa.
+
+Số Noble được dùng:
+Số người chơi + 1
+
+Theo số người:
+- 2 người: 3 Noble, 4 token mỗi màu thường, 5 Gold
+- 3 người: 4 Noble, 5 token mỗi màu thường, 5 Gold
+- 4 người: 5 Noble, 7 token mỗi màu thường, 5 Gold
+
+Với game 4 người:
+- 7 trắng
+- 7 xanh dương
+- 7 xanh lá
+- 7 đỏ
+- 7 đen
+- 5 vàng
+- 5 Noble
+
+4. NGƯỜI ĐI TRƯỚC
+Luật gốc: người trẻ tuổi nhất đi trước.
+Sau đó đi theo chiều kim đồng hồ.
+
+Với web game có thể random người đi trước miễn thứ tự lượt sau đó cố định.
+
+5. MỖI LƯỢT ĐƯỢC LÀM GÌ?
+Mỗi lượt chỉ được thực hiện đúng 1 trong 4 action chính:
+
+A. Lấy 3 token khác màu
+Ví dụ hợp lệ:
+- 1 trắng
+- 1 xanh
+- 1 đỏ
+
+Không được lấy 2 token cùng màu trong action này.
+Gold không được chọn trong action này.
+
+B. Lấy 2 token cùng màu
+Chỉ được lấy nếu trước lúc lấy, ngân hàng đang có ít nhất 4 token của màu đó.
+
+Ví dụ:
+- Bank có 7 đỏ → được lấy 2 đỏ
+- Bank có 4 đỏ → được lấy 2 đỏ
+- Bank có 3 đỏ → không được lấy 2 đỏ
+
+C. Reserve 1 card
+Có thể:
+- Reserve 1 card đang mở trên bàn.
+- Hoặc reserve lá trên cùng đang úp của một Tier.
+
+Nếu reserve card đang mở:
+- Card đó vào vùng reserve của người chơi.
+- Lập tức refill bằng card mới từ cùng Tier nếu deck còn.
+
+Nếu reserve từ deck:
+- Rút lá trên cùng của deck đó.
+- Người khác không được xem lá này nếu chơi đúng kiểu vật lý.
+
+D. Mua 1 Development Card
+Có thể mua:
+- 1 card đang face-up trên bàn.
+- Hoặc 1 card mà chính mình đã reserve.
+
+Không thể mua card reserve của người khác.
+
+6. GIỚI HẠN RESERVE
+Mỗi người được giữ tối đa 3 Development Cards đang reserve.
+
+Không được:
+- Vứt card reserve.
+- Đổi card reserve.
+- Trả card reserve về bàn.
+- Đưa card reserve cho người khác.
+
+Muốn giải phóng slot reserve phải mua card đó.
+
+7. RESERVE VÀ GOLD
+Khi reserve:
+- Người chơi nhận 1 Gold nếu ngân hàng còn Gold.
+- Đây là cách duy nhất để lấy Gold từ ngân hàng.
+
+Không được lấy Gold bằng action lấy đá.
+
+Nếu ngân hàng hết Gold:
+- Vẫn được reserve.
+- Nhưng không nhận Gold.
+
+8. GIÁ DEVELOPMENT CARD
+Mỗi card có chi phí theo màu đá.
+
+Khi mua:
+- Tính chi phí sau khi trừ permanent bonus.
+- Token đã thanh toán được trả về ngân hàng.
+
+9. BONUS VĨNH VIỄN
+Mỗi Development Card đã mua cung cấp 1 bonus màu cố định.
+
+Ví dụ:
+- 3 card bonus xanh dương
+- 2 card bonus đỏ
+- 1 card bonus trắng
+
+Thì người chơi có:
+- Blue bonus = 3
+- Red bonus = 2
+- White bonus = 1
+
+Bonus không bị tiêu hao khi mua card.
+
+10. CÁCH TÍNH GIÁ SAU BONUS
+Công thức:
+
+actualCost[color] = max(cardCost[color] - playerBonus[color], 0)
+
+Ví dụ card cần:
+- Trắng 4
+- Xanh 3
+- Đỏ 2
+- Đen 1
+
+Người chơi có bonus:
+- Trắng 2
+- Xanh 3
+- Đỏ 1
+- Đen 0
+
+Thì giá thực trả:
+- Trắng 2
+- Xanh 0
+- Đỏ 1
+- Đen 1
+
+Bonus có thể khiến card trở thành miễn phí hoàn toàn.
+
+11. GOLD HOẠT ĐỘNG THẾ NÀO?
+Gold là Joker.
+
+Gold có thể thay cho bất kỳ token màu nào còn thiếu khi thanh toán.
+
+Ví dụ sau bonus card cần:
+- Trắng 2
+- Đỏ 2
+
+Người chơi có:
+- Trắng 2
+- Đỏ 1
+- Gold 1
+
+Có thể dùng Gold thay cho 1 đỏ còn thiếu.
+
+Gold dùng để thanh toán cũng được trả về ngân hàng.
+
+12. KHÔNG BẮT BUỘC DÙNG GOLD
+Nếu đủ token màu thường thì không bắt buộc dùng Gold.
+Có thể giữ Gold lại.
+
+13. MUA CARD XONG XẢY RA GÌ?
+Card được đặt trước mặt người chơi.
+
+Card cung cấp:
+- Prestige Point ghi trên card.
+- 1 permanent bonus theo màu card.
+
+Nếu card được mua từ khu vực face-up:
+- Rút card mới từ cùng Tier để refill.
+
+Nếu deck hết:
+- Slot đó để trống.
+
+14. ĐIỂM TRÊN DEVELOPMENT CARD
+Không phải card nào cũng có điểm.
+
+Card 0 điểm vẫn cung cấp permanent bonus.
+
+Tổng Prestige:
+Prestige = tổng điểm Development Cards + tổng điểm Noble
+
+15. NOBLE / QUÝ TỘC
+Mỗi Noble cho 3 Prestige Points.
+
+Noble có điều kiện dựa trên permanent bonus.
+
+Ví dụ yêu cầu:
+- Trắng 3
+- Xanh 3
+- Xanh lá 3
+
+Người chơi phải có ít nhất số bonus tương ứng.
+
+Token đang cầm không được tính.
+Gold không được tính.
+Chỉ Development Cards đã mua mới tính.
+
+16. KHI NÀO KIỂM TRA NOBLE?
+Sau khi người chơi hoàn thành action trong lượt thì kiểm tra Noble.
+
+Nếu sau action người chơi đủ yêu cầu:
+- Noble lập tức được nhận.
+
+17. NOBLE KHÔNG TỐN ACTION
+Nhận Noble không tính là một action riêng.
+
+Một lượt có thể:
+- Buy card
+- Sau đó nhận Noble
+
+Vẫn chỉ tính là một lượt.
+
+18. KHÔNG ĐƯỢC TỪ CHỐI NOBLE
+Nếu đủ điều kiện Noble:
+- Người chơi bắt buộc phải nhận.
+
+19. NẾU ĐỦ NHIỀU NOBLE CÙNG LÚC
+Một lượt chỉ được nhận tối đa 1 Noble.
+
+Nếu đủ nhiều Noble:
+- Người chơi tự chọn 1 Noble.
+- Các Noble còn lại vẫn ở bàn.
+
+20. GIỚI HẠN TOKEN
+Mỗi người được giữ tối đa 10 token vào cuối lượt.
+
+Tính cả:
+- Trắng
+- Xanh dương
+- Xanh lá
+- Đỏ
+- Đen
+- Gold
+
+Development Cards không tính vào giới hạn này.
+
+21. ĐƯỢC VƯỢT 10 TẠM THỜI
+Có thể thực hiện action khiến số token vượt 10.
+
+Nhưng trước khi kết thúc lượt phải trả bớt token về ngân hàng để còn tối đa 10.
+
+Có thể trả:
+- Token vừa lấy.
+- Hoặc token đã có từ trước.
+
+22. GOLD VÀ GIỚI HẠN 10
+Nếu đang có 10 token và reserve:
+- Có thể nhận Gold thành 11.
+- Sau đó phải trả 1 token để còn 10.
+- Có thể trả lại chính Gold vừa nhận.
+
+23. THÔNG TIN CÔNG KHAI
+Người chơi khác bắt buộc phải nhìn thấy:
+- Token bạn đang có.
+- Development Cards đã mua.
+- Bonus.
+- Prestige Points.
+- Noble sở hữu.
+
+24. CARD RESERVE
+Nếu reserve card đang face-up:
+- Mọi người đã nhìn thấy card đó.
+
+Nếu reserve trực tiếp từ deck:
+- Card được giữ bí mật với đối thủ.
+
+25. REFILL CARD
+Khi một face-up card:
+- Được mua
+hoặc
+- Được reserve
+
+thì lập tức rút card mới từ cùng Tier để refill.
+
+26. DECK HẾT CARD
+Nếu deck Tier đó hết:
+- Không refill nữa.
+- Slot đó để trống.
+- Không lấy card từ Tier khác.
+- Không shuffle lại discard.
+
+27. TRÌNH TỰ MỘT LƯỢT
+START TURN
+→ Chọn đúng 1 action
+→ Resolve action
+→ Refill card nếu cần
+→ Nếu token > 10 thì trả bớt
+→ Check Noble
+→ Nếu nhiều Noble đủ điều kiện thì chọn 1
+→ Add Noble / prestige
+→ Check điều kiện ≥ 15 điểm
+→ END TURN
+→ NEXT PLAYER
+
+28. ĐIỀU KIỆN KẾT THÚC GAME
+Khi một player đạt ít nhất 15 Prestige Points:
+- Game kích hoạt vòng cuối.
+- Không cần chính xác 15.
+
+29. GAME KHÔNG KẾT THÚC NGAY KHI CHẠM 15
+Phải hoàn thành vòng hiện tại để tất cả người chơi có cùng số lượt.
+
+Ví dụ thứ tự:
+P1 → P2 → P3 → P4
+
+Nếu P2 đạt 15:
+- P3 vẫn được chơi.
+- P4 vẫn được chơi.
+- Sau P4 mới kết thúc game.
+
+P1 không được thêm lượt vì P1 đã chơi trong vòng đó.
+
+30. AI NÀO THẮNG?
+Sau khi vòng cuối hoàn tất:
+- Người có nhiều Prestige Points nhất thắng.
+
+Prestige Points gồm:
+- Development Card VP
+- Noble VP
+
+31. LUẬT HÒA
+Nếu bằng điểm:
+- Người đã mua ít Development Cards hơn thắng.
+
+Noble không tính vào số Development Cards.
+Reserved card chưa mua cũng không tính.
+
+Nếu vẫn bằng nhau cả điểm và số Development Cards:
+- Coi là đồng hạng/shared victory.
+
+32. TÓM TẮT 4 ACTION
+1. Take 3:
+- Lấy 3 token khác màu.
+
+2. Take 2:
+- Lấy 2 token cùng màu.
+- Bank phải có ít nhất 4 token màu đó trước khi lấy.
+
+3. Reserve:
+- Reserve 1 card.
+- Tối đa 3 card reserve.
+- Nhận 1 Gold nếu còn.
+
+4. Buy:
+- Mua 1 card face-up.
+- Hoặc 1 card đã reserve của chính mình.
+
+33. NHỮNG THỨ KHÔNG ĐƯỢC LÀM
+- Không lấy Gold bằng Take Gems.
+- Không lấy 2 cùng màu nếu bank có dưới 4.
+- Không lấy 2 cùng màu rồi thêm 1 màu khác.
+- Không reserve quá 3 card.
+- Không vứt reserved card.
+- Không mua reserved card của người khác.
+- Không dùng token để đạt Noble.
+- Không dùng Gold để đạt Noble.
+- Không nhận hơn 1 Noble trong cùng lượt.
+- Không từ chối Noble khi đủ điều kiện.
+- Không giữ hơn 10 token sau khi lượt hoàn tất.
+- Bonus không bị mất khi sử dụng.
+- Không lấy card Tier khác để refill.
+- Không kết thúc game ngay khi người đầu tiên đạt 15.
+
+34. PHÂN BIỆT TOKEN VÀ BONUS
+Token:
+- Là tài nguyên tiêu hao.
+- Dùng để thanh toán.
+- Khi dùng thì trả về ngân hàng.
+
+Bonus:
+- Là tài nguyên vĩnh viễn từ Development Cards.
+- Không bị tiêu hao khi mua card.
+
+35. CÔNG THỨC BUY CARD
+remainingCost[color] =
+max(cardCost[color] - permanentBonus[color], 0)
+
+missing =
+tổng max(remainingCost[color] - tokens[color], 0)
+
+Card mua được nếu:
+missing <= goldTokens
+
+36. NOBLE VALIDATOR
+Với mỗi màu:
+player.bonuses[color] >= noble.requirements[color]
+
+Không dùng player.tokens để check Noble.
+
+37. PRESTIGE
+player.prestige =
+sum(purchasedCards.points)
++
+sum(nobles.points)
+
+38. STATE PLAYER GỢI Ý CHO WEB GAME
+Player {
+  id
+  name
+
+  tokens {
+    white
+    blue
+    green
+    red
+    black
+    gold
+  }
+
+  bonuses {
+    white
+    blue
+    green
+    red
+    black
+  }
+
+  purchasedCards[]
+  reservedCards[]
+  nobles[]
+
+  prestige
+  seat
+}
+
+39. STATE GAME GỢI Ý
+Game {
+  players[]
+
+  currentPlayer
+  startingPlayer
+  round
+
+  bank {
+    white
+    blue
+    green
+    red
+    black
+    gold
+  }
+
+  decks {
+    tier1[]
+    tier2[]
+    tier3[]
+  }
+
+  faceUp {
+    tier1[]
+    tier2[]
+    tier3[]
+  }
+
+  nobles[]
+
+  endTriggered
+  endTriggeredBy
+  status
+}
+
+40. LOGIC KẾT THÚC CHO GAME 4 NGƯỜI
+Nếu bất kỳ player nào đạt >= 15:
+game.endTriggered = true
+
+Tiếp tục cho đến khi người chơi cuối cùng của vòng hoàn thành lượt.
+
+Sau đó:
+game.status = "finished"
+
+Xếp kết quả:
+1. Highest prestige.
+2. Nếu hòa: fewest purchased Development Cards.
+3. Nếu vẫn hòa: draw/shared victory.
+
+41. LUỒNG SERVER GỢI Ý
+PLAYER ACTION REQUEST
+→ Kiểm tra đúng lượt hay không
+→ Validate action
+→ Lock game state
+→ Execute action
+→ Update bank
+→ Update card market
+→ Check token limit
+→ Nếu cần discard: WAIT_FOR_DISCARD
+→ Check Noble
+→ Nếu nhiều Noble: WAIT_FOR_NOBLE_SELECTION
+→ Calculate score
+→ Check end trigger
+→ End turn
+→ Next player / finish game
+→ Broadcast new state
+
+42. BẢN RULES NGẮN ĐỂ ĐƯA VÀO UI
+Mục tiêu:
+Thu thập đá quý, mua Thẻ Phát triển và thu hút Quý tộc để giành Điểm Danh vọng.
+
+Mỗi lượt chọn một hành động:
+- Lấy 3 đá khác màu.
+- Lấy 2 đá cùng màu nếu ngân hàng đang có ít nhất 4 viên màu đó.
+- Reserve một thẻ và nhận 1 Gold nếu còn.
+- Mua một thẻ đang mở hoặc thẻ đã reserve.
+
+Thẻ đã mua cung cấp bonus đá vĩnh viễn, giúp giảm chi phí mua các thẻ sau.
+Gold là Joker và có thể thay thế bất kỳ màu đá nào khi thanh toán.
+
+Bạn được reserve tối đa 3 thẻ và giữ tối đa 10 token vào cuối lượt.
+
+Cuối mỗi lượt, nếu số bonus của bạn đạt yêu cầu của một Quý tộc, bạn bắt buộc nhận một Quý tộc đủ điều kiện. Nếu đủ nhiều Quý tộc, chọn một. Mỗi Quý tộc trị giá 3 điểm.
+
+Khi một người đạt ít nhất 15 điểm, hoàn thành vòng hiện tại để tất cả có cùng số lượt. Người nhiều điểm nhất thắng. Nếu hòa điểm, người mua ít Development Card hơn thắng.

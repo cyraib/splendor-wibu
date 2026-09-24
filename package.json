@@ -1,0 +1,47 @@
+{
+  "name": "custom-splendor-online",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "generate:data": "node scripts/generate-manifest.mjs",
+    "dev": "concurrently -k -n server,client -c yellow,cyan \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "tsx watch server/src/index.ts",
+    "dev:client": "vite --config client/vite.config.ts",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "test:watch": "vitest",
+    "build": "npm run generate:data && npm run build:client && npm run build:server",
+    "build:vercel": "npm run generate:data && npm run typecheck:vercel && npm run build:client",
+    "build:client": "vite build --config client/vite.config.ts && node scripts/copy-card-assets.mjs",
+    "build:server": "tsc -p server/tsconfig.json",
+    "typecheck:vercel": "tsc -p tsconfig.vercel.json",
+    "start": "node dist-server/server/src/index.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.117.1",
+    "cors": "^2.8.5",
+    "dotenv": "^18.0.3",
+    "express": "^4.21.2",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^7.1.5",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.1",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.63.0",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.4",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@vercel/node": "^13.0.2",
+    "@vitejs/plugin-react": "^4.3.4",
+    "concurrently": "^9.1.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.7.3",
+    "vite": "^6.1.0",
+    "vitest": "^3.0.5"
+  }
+}

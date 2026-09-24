@@ -1,0 +1,1184 @@
+Bạn đang làm việc trong project Windows sau:
+
+SOURCE ARTWORK:
+D:\Project VS\App vui vẻ\Assets\Assets
+
+MINECRAFT MATERIAL ASSETS:
+D:\Project VS\App vui vẻ\Assets đá
+
+OUTPUT:
+D:\Project VS\App vui vẻ\Assets\_created
+
+Mục tiêu là tạo một bộ thẻ bài custom theo cấu trúc Splendor base game, sử dụng:
+
+- artwork nhân vật có sẵn trong source
+- asset Minecraft có sẵn
+- bố cục hình ảnh gần với Splendor gốc
+- dữ liệu cost / point / bonus / Noble requirement khớp cấu trúc Splendor base game
+
+Không tạo lại artwork nhân vật bằng AI.
+Không thay đổi khuôn mặt, tóc, pose, trang phục hoặc nội dung ảnh gốc.
+
+==================================================
+0. QUY TẮC ASKME.MD
+==================================================
+
+Trong suốt quá trình làm việc:
+
+Nếu gặp bất kỳ vấn đề nào chưa chắc chắn, thiếu dữ liệu, mapping không rõ, tên file không xác định, asset không nhận diện được, số lượng ảnh không đúng, hoặc cần quyết định mang tính thiết kế mà không thể suy ra chắc chắn:
+
+KHÔNG tự đoán.
+
+KHÔNG tự chọn ngẫu nhiên.
+
+KHÔNG dừng toàn bộ project nếu vẫn có thể tiếp tục những phần khác.
+
+Hãy ghi câu hỏi vào:
+
+D:\Project VS\App vui vẻ\askme.md
+
+Format:
+
+# Questions
+
+## Q1
+Vấn đề:
+...
+
+Các lựa chọn / thông tin hiện có:
+...
+
+Đề xuất mặc định nếu cần:
+...
+
+## Q2
+...
+
+Nếu askme.md đã tồn tại:
+- giữ lại nội dung cũ
+- append câu hỏi mới
+- không overwrite
+
+Mọi assumption quan trọng cũng phải được ghi vào askme.md.
+
+==================================================
+1. KHẢO SÁT PROJECT TRƯỚC KHI CHỈNH SỬA
+==================================================
+
+Trước tiên hãy inspect:
+
+D:\Project VS\App vui vẻ
+
+Đặc biệt quét toàn bộ:
+
+D:\Project VS\App vui vẻ\Assets\Assets
+
+và:
+
+D:\Project VS\App vui vẻ\Assets đá
+
+Tìm:
+
+- toàn bộ file ảnh
+- folder structure
+- tên file
+- image dimensions
+- image format
+- transparency
+- naming pattern
+- tier folders nếu có
+- Noble folders nếu có
+- metadata / csv / json / txt / source code có thể chứa dữ liệu card
+
+Tìm trong toàn project các file có khả năng chứa:
+
+- card values
+- point
+- prestige
+- tier
+- bonus
+- cost
+- noble
+- development
+- diamond
+- emerald
+- quartz
+- netherite
+- gold
+
+Bao gồm:
+
+.csv
+.json
+.txt
+.xlsx
+.py
+.js
+.ts
+.cs
+.md
+
+Sau khi scan:
+in summary ngắn gọn ra terminal.
+
+==================================================
+2. KHÔNG ĐƯỢC CHỈNH FILE GỐC
+==================================================
+
+Không overwrite hoặc edit trực tiếp bất kỳ file nào trong:
+
+D:\Project VS\App vui vẻ\Assets\Assets
+
+D:\Project VS\App vui vẻ\Assets đá
+
+Toàn bộ generated files phải nằm trong:
+
+D:\Project VS\App vui vẻ\Assets\_created
+
+Ngoại trừ:
+- script source có thể đặt tại root project
+- askme.md đặt tại root project
+
+==================================================
+3. CẤU TRÚC OUTPUT
+==================================================
+
+Tạo:
+
+D:\Project VS\App vui vẻ\Assets\_created\Preview
+
+D:\Project VS\App vui vẻ\Assets\_created\Tier1
+
+D:\Project VS\App vui vẻ\Assets\_created\Tier2
+
+D:\Project VS\App vui vẻ\Assets\_created\Tier3
+
+D:\Project VS\App vui vẻ\Assets\_created\Nobles
+
+D:\Project VS\App vui vẻ\Assets\_created\Unassigned
+
+Ngoài ra tạo:
+
+D:\Project VS\App vui vẻ\Assets\_created\card_data.csv
+
+D:\Project VS\App vui vẻ\Assets\_created\nobles_data.csv
+
+D:\Project VS\App vui vẻ\Assets\_created\validation_report.txt
+
+Nếu cần:
+D:\Project VS\App vui vẻ\Assets\_created\asset_report.txt
+
+==================================================
+4. CẤU TRÚC GAME PHẢI THEO SPLENDOR BASE GAME
+==================================================
+
+Development cards:
+
+TOTAL = 90
+
+Tier 1:
+40 cards
+
+Tier 2:
+30 cards
+
+Tier 3:
+20 cards
+
+Nobles:
+10 cards
+
+Có 5 permanent bonus colors.
+
+Mỗi bonus color phải xuất hiện:
+
+Tier 1:
+8 cards
+
+Tier 2:
+6 cards
+
+Tier 3:
+4 cards
+
+Tổng:
+18 cards / bonus color
+
+5 colors x 18 = 90 development cards.
+
+Không tự sinh ngẫu nhiên cost.
+
+Không tự balance.
+
+Không tạo "cost gần giống Splendor".
+
+Phải dùng dataset chính xác của Splendor base game.
+
+==================================================
+5. TÌM DATASET SPLENDOR
+==================================================
+
+Trước tiên tìm trong project xem có dataset card Splendor chuẩn hay chưa.
+
+Nếu có:
+validate rồi sử dụng.
+
+Nếu không có:
+tìm nguồn dữ liệu Splendor base game đáng tin cậy từ source code / public dataset / verified implementation nếu có internet/tool access.
+
+Dataset cần chứa chính xác từng development card:
+
+- tier
+- prestige points
+- bonus color
+- white cost
+- blue cost
+- green cost
+- red cost
+- black cost
+
+Và 10 Noble:
+
+- points
+- required white cards
+- required blue cards
+- required green cards
+- required red cards
+- required black cards
+
+Không scrape hình ảnh Splendor gốc.
+Chỉ cần dữ liệu gameplay.
+
+Nếu không thể xác minh dataset chính xác:
+ghi rõ vào askme.md và không tự bịa values.
+
+==================================================
+6. MAPPING SPLENDOR -> MINECRAFT
+==================================================
+
+Mapping cố định:
+
+Original WHITE
+→ Quartz
+
+Original BLUE
+→ Diamond
+
+Original GREEN
+→ Emerald
+
+Original RED / Ruby
+→ Gold
+
+Original BLACK
+→ Netherite
+
+Rất quan trọng:
+
+Minecraft Gold ở bộ custom này đại diện cho màu RED của Splendor.
+
+Nó KHÔNG phải token Gold Joker của Splendor.
+
+==================================================
+7. GOLD JOKER
+==================================================
+
+Không dùng Minecraft Gold như Joker.
+
+Development-card costs chỉ dùng 5 màu:
+
+Quartz
+Diamond
+Emerald
+Gold
+Netherite
+
+Nếu sau này cần token Joker riêng:
+không tự thiết kế trong task này trừ khi source project đã có chỉ dẫn.
+
+Nếu cần xử lý token Joker nhưng chưa rõ asset:
+ghi vào askme.md.
+
+==================================================
+8. CARD DATA CSV
+==================================================
+
+Tạo:
+
+D:\Project VS\App vui vẻ\Assets\_created\card_data.csv
+
+Schema:
+
+id,
+source_image,
+tier,
+points,
+bonus,
+quartz_cost,
+diamond_cost,
+emerald_cost,
+gold_cost,
+netherite_cost
+
+Phải có đúng:
+
+40 Tier1
+30 Tier2
+20 Tier3
+
+Tổng 90 rows development.
+
+Bonus phải là một trong:
+
+quartz
+diamond
+emerald
+gold
+netherite
+
+==================================================
+9. NOBLE DATA CSV
+==================================================
+
+Tạo:
+
+D:\Project VS\App vui vẻ\Assets\_created\nobles_data.csv
+
+Schema:
+
+id,
+source_image,
+points,
+quartz_req,
+diamond_req,
+emerald_req,
+gold_req,
+netherite_req
+
+Có đúng 10 Noble.
+
+Mỗi Noble:
+- 3 prestige points
+- không có permanent bonus
+- không có material purchase cost
+
+Requirement là số development-card bonuses đã sở hữu.
+
+Pattern phải match Noble Splendor base game.
+
+Không tự tạo pattern mới.
+
+==================================================
+10. VALIDATION BẮT BUỘC
+==================================================
+
+Trước khi render batch:
+
+Validate:
+
+Development total == 90
+
+Tier1 == 40
+
+Tier2 == 30
+
+Tier3 == 20
+
+Nobles == 10
+
+Mỗi bonus:
+
+Tier1 == 8
+Tier2 == 6
+Tier3 == 4
+Total == 18
+
+Check:
+- prestige points
+- bonus distribution
+- costs
+- Noble requirements
+
+phải match dataset Splendor đã verify.
+
+Nếu bất kỳ validation nào fail:
+
+KHÔNG render full batch.
+
+Tạo:
+
+validation_report.txt
+
+và ghi vấn đề vào askme.md.
+
+==================================================
+11. MAPPING ARTWORK VÀ CARD DATA
+==================================================
+
+Inspect source artwork.
+
+Nếu source folder đã phân:
+
+Tier1
+Tier2
+Tier3
+Nobles
+
+thì giữ mapping folder đó.
+
+Nếu artwork đã đánh số:
+map tuần tự trong từng tier.
+
+Nếu naming pattern rõ:
+dùng naming pattern.
+
+Nếu có chính xác:
+
+40 artwork Tier1
+30 artwork Tier2
+20 artwork Tier3
+10 Noble artwork
+
+thì map 1-to-1.
+
+Nếu số ảnh không khớp:
+không tự duplicate ảnh.
+không tự bỏ ảnh.
+
+Đưa file không xác định vào:
+
+_created\Unassigned
+
+và ghi vào askme.md.
+
+==================================================
+12. ASSET MINECRAFT
+==================================================
+
+Quét:
+
+D:\Project VS\App vui vẻ\Assets đá
+
+Tự xác định asset tương ứng:
+
+Diamond
+Emerald
+Gold
+Netherite
+Quartz
+
+Ưu tiên:
+
+PNG transparent
+resolution cao
+icon rõ
+không có background
+
+Không tạo icon mới nếu asset phù hợp đã có.
+
+Nếu có nhiều icon cho một material:
+chọn icon đồng bộ style nhất.
+
+Nếu không chắc:
+ghi lựa chọn vào askme.md.
+
+==================================================
+13. DEVELOPMENT CARD VISUAL STYLE
+==================================================
+
+Layout phải rất gần tinh thần Splendor gốc.
+
+KHÔNG tạo:
+- fantasy TCG frame
+- Hearthstone frame
+- Yu-Gi-Oh frame
+- Magic-style text box
+- viền kim loại dày
+- Renaissance filigree quá lớn
+- bảng information dưới đáy
+- ribbon
+- banner
+- ornament che artwork
+
+Artwork phải gần như full bleed.
+
+Card:
+portrait.
+
+Target size:
+
+756 x 1056 px
+
+hoặc scale lớn hơn với đúng ratio tương đương.
+
+Rounded corners nhẹ.
+
+Không perspective.
+
+==================================================
+14. DEVELOPMENT CARD - POINTS
+==================================================
+
+Prestige Point nằm:
+
+TOP LEFT.
+
+Chỉ hiển thị số.
+
+Ví dụ:
+1
+2
+3
+4
+5
+
+Nếu point = 0:
+không cần hiển thị số 0 nếu Splendor style phù hợp.
+
+Style:
+
+- font serif hoặc clean display
+- màu trắng / ivory
+- shadow hoặc dark outline nhẹ
+- dễ đọc
+
+Không đặt trong badge fantasy lớn.
+
+Không đặt chữ "POINT".
+
+Không đặt chữ "Prestige".
+
+==================================================
+15. DEVELOPMENT CARD - BONUS
+==================================================
+
+Bonus nằm:
+
+TOP RIGHT.
+
+Bonus dùng Minecraft material icon.
+
+Mapping:
+
+Quartz
+Diamond
+Emerald
+Gold
+Netherite
+
+Bonus icon phải:
+- lớn hơn cost icons một chút
+- rõ ràng
+- sát góc phải trên
+- không che khuôn mặt
+
+Không thêm text label.
+
+==================================================
+16. DEVELOPMENT CARD - COST
+==================================================
+
+Cost nằm:
+
+DỌC theo MÉP TRÁI.
+
+Không đặt thành horizontal row ở đáy.
+
+Không tạo bottom panel.
+
+Chỉ hiển thị materials có cost > 0.
+
+Format mỗi dòng:
+
+[material icon] [number]
+
+Ví dụ:
+
+💎 3
+🟨 2
+⬜ 1
+
+nhưng phải dùng actual Minecraft assets chứ không dùng emoji.
+
+Icon:
+- cùng kích thước
+- align thẳng
+- khoảng cách đều
+- không overlap
+
+Số:
+- màu trắng
+- outline/shadow tối
+- rõ ràng
+
+Nếu artwork quá sáng:
+có thể thêm circular / rounded dark translucent background rất nhẹ phía sau icon và số.
+
+Không tạo rectangle panel lớn.
+
+==================================================
+17. SAFE AREA
+==================================================
+
+UI không được che:
+
+- mắt
+- khuôn mặt
+- đầu nhân vật
+- chi tiết quan trọng
+
+Cho phép:
+- crop artwork
+- resize artwork
+- reposition artwork
+
+Không:
+- redraw
+- inpaint
+- reconstruct
+- generate additional body parts
+
+Ưu tiên giữ:
+face
+upper body
+main composition.
+
+==================================================
+18. NOBLE CARD VISUAL STYLE
+==================================================
+
+Noble phải cùng visual language với deck.
+
+Không biến Noble thành thẻ Hearthstone.
+
+Artwork vẫn là trọng tâm.
+
+Point:
+TOP LEFT
+
+Noble không có bonus icon.
+
+Requirement:
+vertical ở mép trái.
+
+==================================================
+19. NOBLE REQUIREMENT PHẢI LÀ MINI CARD
+==================================================
+
+Đây là rule bắt buộc.
+
+Noble requirements KHÔNG được hiển thị bằng:
+
+Diamond item
+Emerald item
+Gold item
+Netherite item
+Quartz item
+
+Requirement đại diện cho:
+
+DEVELOPMENT CARDS / PERMANENT BONUSES đã sở hữu.
+
+Vì vậy phải tạo 5 mini-card assets:
+
+Quartz card = white mini card
+
+Diamond card = blue mini card
+
+Emerald card = green mini card
+
+Gold card = yellow / gold mini card
+
+Netherite card = black / dark mini card
+
+Mini card:
+
+- vertical rectangle
+- rounded corner nhẹ
+- rất đơn giản
+- border nhẹ
+- nhìn rõ là "lá bài nhỏ"
+- không giống gem
+
+Có thể thêm symbol nhỏ của material lên mini-card nếu cần để dễ nhận diện.
+
+Nhưng visual chính phải là CARD, không phải mineral.
+
+==================================================
+20. NOBLE REQUIREMENT LAYOUT
+==================================================
+
+Requirement nằm thành cột ở mép trái.
+
+Mỗi requirement:
+
+[mini card] [number]
+
+Chỉ hiện color có requirement > 0.
+
+Ví dụ:
+
+[blue mini card] 3
+
+[green mini card] 3
+
+[white mini card] 3
+
+Không hiển thị zero.
+
+==================================================
+21. AUTO LAYOUT
+==================================================
+
+Tạo reusable layout constants.
+
+Ví dụ:
+
+CARD_WIDTH
+CARD_HEIGHT
+
+CORNER_RADIUS
+
+POINT_X
+POINT_Y
+
+BONUS_X
+BONUS_Y
+
+COST_X
+COST_START_Y
+COST_SPACING
+
+BONUS_ICON_SIZE
+COST_ICON_SIZE
+
+POINT_FONT_SIZE
+COST_FONT_SIZE
+
+NOBLE_REQ_X
+NOBLE_REQ_START_Y
+NOBLE_REQ_SPACING
+
+Các constant phải nằm ở đầu script để dễ chỉnh.
+
+==================================================
+22. SCRIPT
+==================================================
+
+Tạo script chính:
+
+D:\Project VS\App vui vẻ\generate_cards.py
+
+Ưu tiên:
+
+Python + Pillow
+
+Có thể dùng thêm:
+- pandas
+- pathlib
+- csv
+
+nếu cần.
+
+Script phải support:
+
+python generate_cards.py --preview
+
+python generate_cards.py --all
+
+python generate_cards.py --validate
+
+python generate_cards.py --overwrite
+
+Không overwrite output mặc định.
+
+==================================================
+23. PREVIEW TRƯỚC
+==================================================
+
+Trước full render:
+
+render thử:
+
+1 Tier1
+1 Tier2
+1 Tier3
+1 Noble
+
+Output:
+
+D:\Project VS\App vui vẻ\Assets\_created\Preview
+
+Chọn preview cards có cost khác nhau để test layout.
+
+Ví dụ:
+- low-cost Tier1
+- medium Tier2
+- high-cost Tier3
+- Noble 3-color requirement
+
+==================================================
+24. PREVIEW CHECK
+==================================================
+
+Sau preview:
+
+check bằng code / image inspection nếu có thể:
+
+- ratio đúng
+- point không lệch
+- bonus không che nhân vật
+- cost không overlap
+- icon sắc nét
+- text readable
+- Noble dùng mini-card
+- Noble không dùng gem icons
+- artwork không bị stretch
+- crop hợp lý
+
+Nếu phát hiện vấn đề:
+chỉnh layout constants.
+
+==================================================
+25. FULL BATCH
+==================================================
+
+Chỉ sau khi:
+
+DATA VALIDATION PASS
+
+và
+
+PREVIEW GENERATION PASS
+
+mới render full deck.
+
+Output:
+
+Tier1 → 40 cards
+
+Tier2 → 30 cards
+
+Tier3 → 20 cards
+
+Nobles → 10 cards
+
+Tổng:
+100 generated images.
+
+==================================================
+26. FILE NAMING
+==================================================
+
+Giữ source stem nếu có thể.
+
+Ví dụ:
+
+source:
+Asuna.png
+
+output:
+Tier3\Asuna.png
+
+Nếu cần thêm ID:
+
+T3_001_Asuna.png
+
+Không rename source file.
+
+==================================================
+27. IMAGE QUALITY
+==================================================
+
+PNG output.
+
+Không JPEG trừ khi source bắt buộc.
+
+High quality resize:
+LANCZOS.
+
+Nếu asset có transparency:
+giữ alpha trong processing.
+
+Final cards có thể RGB hoặc RGBA.
+
+Không upscale source quá mạnh nếu gây blur.
+
+Nếu source resolution quá thấp:
+ghi warning vào validation report.
+
+==================================================
+28. KHÔNG DÙNG GENERATIVE AI ĐỂ CHỈNH NHÂN VẬT
+==================================================
+
+Không:
+- generative fill
+- face regeneration
+- body reconstruction
+- background hallucination
+- AI redraw
+
+Nếu crop thiếu background:
+dùng crop/reposition đơn giản.
+
+Không tự tạo thêm nội dung ảnh.
+
+==================================================
+29. BACKUPS
+==================================================
+
+Không cần backup source vì source không được thay đổi.
+
+Nếu regenerate output:
+chỉ overwrite khi có flag:
+
+--overwrite
+
+==================================================
+30. LOGGING
+==================================================
+
+Trong quá trình render:
+
+log:
+
+[1/40] Tier1 ...
+[2/40] Tier1 ...
+
+...
+
+Kết thúc:
+
+Development cards rendered:
+90
+
+Tier1:
+40
+
+Tier2:
+30
+
+Tier3:
+20
+
+Nobles:
+10
+
+Errors:
+X
+
+Warnings:
+X
+
+==================================================
+31. VALIDATION REPORT
+==================================================
+
+Tạo:
+
+D:\Project VS\App vui vẻ\Assets\_created\validation_report.txt
+
+Bao gồm:
+
+SOURCE FILES
+...
+
+MATERIAL ASSETS
+...
+
+DATASET SOURCE
+...
+
+CARD COUNTS
+Tier1: X / 40
+Tier2: X / 30
+Tier3: X / 20
+Nobles: X / 10
+
+BONUS DISTRIBUTION
+Quartz ...
+Diamond ...
+Emerald ...
+Gold ...
+Netherite ...
+
+DATA VALIDATION
+PASS / FAIL
+
+ARTWORK MAPPING
+PASS / FAIL
+
+RENDER
+PASS / FAIL
+
+UNASSIGNED FILES
+...
+
+WARNINGS
+...
+
+==================================================
+32. FINAL QUALITY TARGET
+==================================================
+
+Target visual:
+
+"Original Splendor-like minimalist card layout using custom anime artwork and Minecraft resource icons."
+
+Important visual properties:
+
+- full-bleed artwork
+- almost no decorative frame
+- point top-left
+- bonus top-right
+- costs vertically aligned on left
+- clear Minecraft materials
+- minimal board-game UI
+- premium printed card look
+- artwork remains dominant
+
+Noble:
+
+- point top-left
+- no bonus
+- requirements vertical on left
+- requirement represented by miniature development cards
+- not by resource stones
+
+==================================================
+33. MỌI ĐIỀU CHƯA CHẮC -> ASKME.MD
+==================================================
+
+Nếu gặp những trường hợp như:
+
+- không biết ảnh nào thuộc Tier nào
+- không biết ảnh nào là Noble
+- có hơn / thiếu 90 development images
+- có hơn / thiếu 10 Noble images
+- không xác định được Minecraft asset
+- nhiều Quartz assets khác nhau
+- không xác định dataset Splendor chuẩn
+- source filenames không rõ
+- Noble đang là square hay portrait
+- artwork crop khó
+- cần quyết định font
+- cần quyết định position vì che mặt
+
+thì:
+
+ghi câu hỏi cụ thể vào:
+
+D:\Project VS\App vui vẻ\askme.md
+
+Không tự bịa quyết định mang tính gameplay.
+
+Gameplay values tuyệt đối không được random.
+
+==================================================
+34. THỨ TỰ THỰC HIỆN
+==================================================
+
+Thực hiện theo đúng thứ tự:
+
+STEP 1
+Inspect project.
+
+STEP 2
+Scan character assets.
+
+STEP 3
+Scan Minecraft assets.
+
+STEP 4
+Find / verify Splendor dataset.
+
+STEP 5
+Build card_data.csv.
+
+STEP 6
+Build nobles_data.csv.
+
+STEP 7
+Validate deck mathematics.
+
+STEP 8
+Map artwork.
+
+STEP 9
+Record unresolved issues in askme.md.
+
+STEP 10
+Implement generate_cards.py.
+
+STEP 11
+Generate 4 preview cards.
+
+STEP 12
+Inspect preview.
+
+STEP 13
+Adjust layout if necessary.
+
+STEP 14
+Run validation again.
+
+STEP 15
+Render full batch only if validation passes.
+
+STEP 16
+Generate final validation_report.txt.
+
+==================================================
+35. KHÔNG HỎI TRỰC TIẾP TRONG TERMINAL NẾU KHÔNG CẦN
+==================================================
+
+Nếu cần user input:
+
+ưu tiên ghi vào askme.md.
+
+Tiếp tục làm những phần không phụ thuộc vào câu trả lời.
+
+Không block toàn bộ workflow chỉ vì một câu hỏi nhỏ.
+
+Nếu câu hỏi ngăn cản việc render đúng gameplay:
+không render các card liên quan cho đến khi được giải quyết.
+
+==================================================
+36. KẾT QUẢ CUỐI CÙNG MONG MUỐN
+==================================================
+
+Sau khi hoàn tất project phải có:
+
+D:\Project VS\App vui vẻ\generate_cards.py
+
+D:\Project VS\App vui vẻ\askme.md
+(nếu có câu hỏi / assumption)
+
+D:\Project VS\App vui vẻ\Assets\_created\card_data.csv
+
+D:\Project VS\App vui vẻ\Assets\_created\nobles_data.csv
+
+D:\Project VS\App vui vẻ\Assets\_created\validation_report.txt
+
+D:\Project VS\App vui vẻ\Assets\_created\Preview\...
+
+D:\Project VS\App vui vẻ\Assets\_created\Tier1\...
+40 cards
+
+D:\Project VS\App vui vẻ\Assets\_created\Tier2\...
+30 cards
+
+D:\Project VS\App vui vẻ\Assets\_created\Tier3\...
+20 cards
+
+D:\Project VS\App vui vẻ\Assets\_created\Nobles\...
+10 cards
+
+Tổng cộng:
+90 Development Cards
+10 Noble Cards
+100 generated cards.
+
+Không coi task là hoàn thành nếu chỉ mới tạo script.
+
+Phải thực sự chạy script, validate dataset, tạo preview, và nếu mọi validation pass thì render toàn bộ output.

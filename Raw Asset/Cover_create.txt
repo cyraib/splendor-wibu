@@ -1,0 +1,82 @@
+Tạo một thẻ bài custom phong cách Splendor-anime trên canvas vuông 1:1, dùng ảnh nhân vật đã cung cấp làm artwork chính.
+
+YÊU CẦU CHUNG:
+- Giữ nguyên nhân vật gốc, không thay đổi khuôn mặt, tóc, trang phục, biểu cảm hay pose.
+- Artwork chiếm phần lớn diện tích thẻ.
+- Bố cục sạch, đẹp, premium, giống collectible board-game card.
+- Không dùng khung fantasy quá dày kiểu TCG nặng nề.
+- Tạo cảm giác sang trọng, lấp lánh, tinh xảo, đồng bộ giữa các tier.
+
+BỐ CỤC:
+1. Tên nhân vật đặt dọc bên trái, trong một dải kính mỏng.
+2. Các cost đặt dọc ở mép trái dưới tên nhân vật.
+3. Bonus đặt ở góc trên bên phải.
+4. Có viền ngoài đẹp, phát sáng nhẹ, bo tròn góc.
+5. Toàn bộ card là hình vuông 1:1.
+
+STYLE UI:
+- Các ô cost và ô bonus dùng phong cách glassmorphism / bong bóng kính trong suốt.
+- Nền trong mờ, nhìn xuyên được artwork phía sau.
+- Có border sáng mảnh, highlight nhẹ, blur nền nhẹ, bóng mềm.
+- Không dùng nền đen đặc.
+- Các bubble cost cùng kích thước, xếp dọc đều nhau.
+- Bonus bubble lớn hơn cost bubble một chút.
+
+FONT:
+- Tất cả số phải dùng font pixel kiểu Minecraft.
+- Màu trắng / trắng kem.
+- Có viền tối hoặc shadow pixel nhẹ để dễ đọc.
+- Tên nhân vật cũng dùng font pixel/blocky phù hợp.
+
+ICON:
+- Dùng icon material Minecraft:
+  - Diamond = xanh dương
+  - Emerald = xanh lá
+  - Gold = vàng
+  - Netherite = đen/xám đậm
+  - Quartz = trắng
+- Icon rõ, sắc nét, đồng bộ.
+
+KHUNG THEO TIER:
+- Noble: khung kim cương óng ánh, sáng nhất, sang trọng nhất, có cảm giác pha lê / diamond frame, phản chiếu ánh sáng, cực premium.
+- Tier 3: khung vàng kim lấp lánh, royal, quý phái.
+- Tier 2: khung bạc sáng, tinh tế, thanh lịch.
+- Tier 1: khung gỗ đẹp, ấm, chạm khắc tinh tế, vẫn sang nhưng mộc hơn.
+- Mỗi khung có ornament nhẹ ở 4 góc và giữa cạnh, nhưng không được quá rối.
+- Các khung phải rõ khác biệt về chất liệu nhưng cùng một hệ phong cách.
+
+YÊU CẦU KHUNG:
+- Noble frame là loại xịn nhất.
+- Diamond frame của Noble phải sáng, trong, nhiều điểm lóe sáng, cảm giác cao cấp nhất.
+- Gold frame của Tier 3 phải đậm chất hoàng gia.
+- Silver frame của Tier 2 phải thanh thoát, sáng lạnh.
+- Wood frame của Tier 1 phải ấm, đẹp, có chiều sâu, có thể có lá/vine nhỏ hoặc chạm khắc nhẹ.
+
+TEXT / LABEL:
+- Tên nhân vật hiển thị dọc bên trái: [CHARACTER_NAME]
+- Nếu cần hiển thị loại thẻ, dùng label nhỏ tinh tế: [NOBLE / TIER 3 / TIER 2 / TIER 1]
+- Không để text che mặt nhân vật.
+
+DỮ LIỆU THẺ:
+- Bonus material: [BONUS]
+- Cost:
+  - Quartz: [QUARTZ_COST]
+  - Diamond: [DIAMOND_COST]
+  - Emerald: [EMERALD_COST]
+  - Gold: [GOLD_COST]
+  - Netherite: [NETHERITE_COST]
+
+RÀNG BUỘC QUAN TRỌNG:
+- Không đổi nhân vật.
+- Không redraw lại artwork.
+- Không làm nền đen đặc cho UI.
+- Tập trung vào vẻ đẹp của khung và glass bubble.
+- Kết quả cuối phải giống một collectible Splendor custom card cực đẹp, anime artwork + Minecraft materials + khung tier sang trọng.
+
+Nếu là một ảnh showcase nhiều loại khung:
+- Hiển thị 4 card cùng một nhân vật để so sánh:
+  - Noble frame (diamond)
+  - Tier 3 frame (gold)
+  - Tier 2 frame (silver)
+  - Tier 1 frame (wood)
+- Mỗi card giữ cùng bố cục, chỉ thay chất liệu và phong cách khung.

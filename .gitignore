@@ -1,0 +1,24 @@
+node_modules/
+dist/
+dist-server/
+coverage/
+*.log
+test-results/
+playwright-report/
+.vercel/
+.env*
+!.env.example
+__pycache__/
+*.py[cod]
+.pytest_cache/
+Thumbs.db
+.DS_Store
+
+# Only the rendered cards, nobles, CSV data, and six resource icons are needed to build.
+# Keep original artwork and previews locally without uploading duplicate assets.
+Raw Asset/Assets/Assets/
+Raw Asset/Assets ghép/
+Raw Asset/Assets/_created/Preview/
+Raw Asset/Assets/_created/Preview_Covers/
+Raw Asset/Assets/_created/Preview_UI/
+Raw Asset/Assets/_created/validation_report.txt

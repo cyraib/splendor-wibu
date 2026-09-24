@@ -1,0 +1,581 @@
+Hãy chỉnh lại visual layout của toàn bộ card đã tạo theo các yêu cầu dưới đây.
+
+QUAN TRỌNG:
+- Không thay đổi artwork nhân vật.
+- Không redraw nhân vật.
+- Không thay đổi gameplay data.
+- Không thay đổi point / bonus / cost.
+- Chỉ chỉnh UI overlay.
+- Áp dụng thống nhất cho toàn bộ Tier1, Tier2, Tier3 và Noble.
+
+==================================================
+1. CANVAS / TỈ LỆ OUTPUT
+==================================================
+
+Thay output từ portrait card sang canvas VUÔNG:
+
+1:1 aspect ratio.
+
+Ví dụ:
+1024 x 1024 px
+hoặc
+1200 x 1200 px
+
+Không stretch artwork.
+
+Hãy crop/reposition ảnh nhân vật để phù hợp canvas vuông.
+
+Ưu tiên:
+- giữ trọn khuôn mặt
+- giữ tóc
+- giữ upper body
+- không cắt mất chi tiết chính
+
+Artwork vẫn phải là background full-bleed.
+
+==================================================
+2. PHONG CÁCH UI MỚI
+==================================================
+
+Không sử dụng các ô nền đen đặc như hiện tại.
+
+Thay toàn bộ:
+- cost bubbles
+- bonus bubble
+- point bubble nếu có
+- name strip
+
+bằng phong cách:
+
+GLASSMORPHISM / TRANSPARENT GLASS BUBBLE.
+
+Đặc điểm:
+
+- nền trong suốt
+- chỉ hơi tối / hơi trắng để tách khỏi artwork
+- opacity khoảng 18%–32%
+- có blur nhẹ phía sau
+- border sáng mỏng
+- highlight ánh sáng ở cạnh trên/trái
+- shadow mềm rất nhẹ
+- rounded corners lớn
+- cảm giác như kính trong / acrylic / glass bubble
+- premium board-game UI
+
+Không:
+- solid black background
+- rectangle đen đặc
+- border thô
+- UI nặng nề
+
+Bong bóng phải cho thấy artwork phía sau xuyên qua.
+
+==================================================
+3. STYLE BONG BÓNG COST
+==================================================
+
+Mỗi cost vẫn là:
+
+[material icon] [number]
+
+Nhưng đặt trong một rounded glass capsule.
+
+Ví dụ:
+
+┌───────────┐
+│ 💎     2  │
+└───────────┘
+
+Visual:
+
+- rounded rectangle
+- radius lớn
+- translucent glass
+- subtle white border
+- subtle inner highlight
+- very light background blur
+- soft shadow
+
+Kích thước tất cả bubble bằng nhau.
+
+Không để bubble chồng lên nhau.
+
+Spacing đều.
+
+==================================================
+4. BONUS BUBBLE
+==================================================
+
+Bonus ở góc trên phải.
+
+Đặt material bonus trong một bong bóng kính gần vuông:
+
+- rounded square
+- transparent glass
+- border trắng/ivory mảnh
+- highlight nhẹ
+- shadow mềm
+
+Material icon nằm chính giữa.
+
+Không có background đen đặc.
+
+Bonus bubble phải hơi lớn hơn các cost bubbles.
+
+==================================================
+5. FONT SỐ — MINECRAFT STYLE
+==================================================
+
+Tất cả số trên card phải dùng font pixel kiểu Minecraft.
+
+Bao gồm:
+
+- Prestige Points
+- cost numbers
+- Noble requirement numbers
+
+Style:
+
+Minecraft-style pixel font / blocky pixel font.
+
+Không sử dụng:
+- serif
+- Times New Roman
+- fantasy calligraphy
+- smooth modern sans-serif
+
+Số phải có dạng pixel/block rõ ràng.
+
+Màu:
+
+WHITE / OFF-WHITE
+
+với:
+
+- dark pixel outline 2–4 px
+- hoặc shadow đen nhẹ lệch khoảng 2 px
+
+Ví dụ visual:
+
+1
+2
+3
+4
+5
+
+phải trông giống UI Minecraft.
+
+Nếu project có file font Minecraft hoặc pixel font:
+hãy tìm và sử dụng.
+
+Search project cho:
+.ttf
+.otf
+
+với tên có thể chứa:
+minecraft
+mojang
+pixel
+block
+
+Nếu không có font phù hợp:
+ghi vào askme.md.
+
+Không tự tải font lạ nếu chưa được yêu cầu.
+
+==================================================
+6. PRESTIGE POINTS
+==================================================
+
+Prestige Points ở góc trên bên trái.
+
+Số phải:
+
+- Minecraft-style pixel font
+- lớn hơn cost number rõ rệt
+- trắng
+- outline/shadow đen pixel nhẹ
+
+Có thể đặt trong:
+
+một bubble kính nhỏ
+
+HOẶC
+
+đặt trực tiếp trên artwork nếu đọc rõ.
+
+Ưu tiên bubble kính rất nhẹ.
+
+Không tạo huy hiệu fantasy lớn.
+
+==================================================
+7. TÊN NHÂN VẬT
+==================================================
+
+Thêm tên nhân vật vào card.
+
+Tên lấy từ:
+- filename
+hoặc
+- metadata/card mapping nếu đã có.
+
+Không tự đoán tên nếu filename không rõ.
+
+Nếu không xác định được tên:
+ghi vào askme.md.
+
+==================================================
+8. VỊ TRÍ TÊN NHÂN VẬT
+==================================================
+
+Tên nhân vật nằm DỌC theo MÉP TRÁI card.
+
+Không đặt ngang dưới đáy.
+
+Thiết kế:
+
+một strip kính trong suốt rất mỏng chạy dọc theo cạnh trái.
+
+Text được rotate 90°.
+
+Tên đọc từ:
+BOTTOM → TOP
+
+hoặc nếu implementation thuận hơn:
+TOP → BOTTOM
+
+Nhưng phải dùng cùng một hướng cho toàn bộ deck.
+
+Ưu tiên:
+
+BOTTOM → TOP.
+
+Ví dụ:
+
+E
+C
+H
+I
+D
+N
+A
+
+Không cần xếp từng chữ riêng biệt.
+
+Hãy rotate nguyên text 90° để đọc dọc.
+
+==================================================
+9. STYLE NAME STRIP
+==================================================
+
+Name strip:
+
+- chiều rộng nhỏ
+- translucent glass
+- opacity thấp
+- border sáng cực mỏng
+- background blur nhẹ
+- không che artwork quá nhiều
+
+Tên:
+
+Minecraft-style pixel font
+
+hoặc pixel font tương thích với font số.
+
+Font size vừa phải.
+
+Màu:
+white / warm ivory
+
+Outline:
+dark subtle pixel outline
+
+Có thể dùng ALL CAPS:
+
+ECHIDNA
+
+hoặc giữ capitalization tự nhiên:
+
+Echidna
+
+Ưu tiên:
+ECHIDNA
+
+để nhìn giống game UI hơn.
+
+==================================================
+10. BỐ CỤC CARD SAU KHI THÊM TÊN
+==================================================
+
+Canvas square.
+
+Layout gợi ý:
+
+LEFT EDGE:
+vertical character name strip
+
+LEFT / LOWER LEFT:
+vertical cost bubbles
+
+TOP LEFT:
+Prestige Point
+
+TOP RIGHT:
+bonus bubble
+
+CENTER / RIGHT:
+character artwork
+
+Không để:
+- name strip
+- cost
+- bonus
+- point
+
+che mặt nhân vật.
+
+==================================================
+11. COST POSITION
+==================================================
+
+Cost vẫn nằm thành cột dọc bên trái.
+
+Nhưng do có name strip ở sát mép ngoài:
+
+Name Strip:
+x = 0 → khoảng 5–7% width
+
+Cost Column:
+x = khoảng 7–25% width
+
+Artwork:
+phần còn lại.
+
+Thứ tự từ trái sang phải:
+
+[NAME STRIP] [COST BUBBLES] [CHARACTER]
+
+Không bắt buộc đúng pixel trên nếu artwork cần điều chỉnh.
+
+==================================================
+12. COLOR TINT CỦA GLASS
+==================================================
+
+Glass bubble không hoàn toàn màu trắng.
+
+Có thể tint cực nhẹ theo material.
+
+Diamond:
+very subtle cyan/blue glass tint
+
+Emerald:
+very subtle green glass tint
+
+Gold:
+very subtle warm gold tint
+
+Netherite:
+very subtle smoky gray tint
+
+Quartz:
+very subtle white/silver tint
+
+Nhưng:
+
+opacity phải thấp.
+
+Không biến bubble thành solid colored button.
+
+Material icon vẫn phải là phần có màu nổi bật nhất.
+
+==================================================
+13. NETHERITE BUBBLE
+==================================================
+
+Đặc biệt Netherite:
+
+Không dùng nền đen đặc.
+
+Thay bằng:
+
+- smoky transparent glass
+- dark gray tint khoảng 20–28% opacity
+- white/silver border
+- soft highlight
+
+Vẫn phải nhìn xuyên thấy artwork phía sau.
+
+==================================================
+14. NOBLE CARD
+==================================================
+
+Noble cũng dùng cùng style:
+
+- square 1:1
+- vertical character name bên trái
+- glass UI
+- Minecraft pixel font
+
+Nhưng Noble:
+
+KHÔNG có bonus material.
+
+Requirement vẫn dùng MINI DEVELOPMENT CARDS.
+
+Các mini card requirement có thể đặt trong glass bubbles.
+
+Format:
+
+[mini blue card] [3]
+
+[mini green card] [3]
+
+[mini white card] [3]
+
+Số 3 dùng Minecraft pixel font.
+
+Không thay requirement thành Minecraft resource icons.
+
+==================================================
+15. GLASS EFFECT IMPLEMENTATION
+==================================================
+
+Nếu dùng Python Pillow:
+
+Ưu tiên implement glass bằng:
+
+1. lấy vùng background phía sau bubble
+2. GaussianBlur nhẹ
+3. overlay màu trắng / xám với alpha thấp
+4. rounded rectangle mask
+5. stroke trắng/ivory alpha vừa
+6. inner highlight nhẹ
+7. optional soft shadow
+
+Không chỉ đơn giản vẽ rectangle RGBA màu đen.
+
+Glass phải thực sự có cảm giác trong suốt.
+
+==================================================
+16. GLASS STYLE THAM KHẢO
+==================================================
+
+Target:
+
+premium transparent glass UI
+soft acrylic
+modern glassmorphism
+frosted glass
+subtle specular highlight
+
+Kết hợp với:
+
+Minecraft pixel material icons
+Minecraft-style pixel numbers
+anime artwork
+Splendor-style minimalist information layout
+
+Không biến UI thành:
+- sci-fi HUD
+- neon cyberpunk
+- mobile game buttons
+- fantasy metal frame
+
+==================================================
+17. CARD BORDER
+==================================================
+
+Border ngoài card cũng làm đẹp hơn.
+
+Dùng:
+
+- border mỏng
+- ivory / warm white
+- hơi trong suốt
+- subtle glow
+- rounded corners
+
+Có thể tạo hiệu ứng kính nhẹ.
+
+Không làm viền vàng fantasy dày.
+
+==================================================
+18. TÊN FILE
+==================================================
+
+Ví dụ source:
+
+T1_02_065_Echidna.png
+
+Tên character suy ra:
+
+Echidna
+
+Hiển thị:
+
+ECHIDNA
+
+Không hiển thị:
+
+T1_02_065_
+
+Nếu filename dạng:
+
+T3_04_021_Asuna_Yuuki.png
+
+có thể hiển thị:
+
+ASUNA YUUKI
+
+Nếu parser không chắc phần nào là tên:
+ghi vào askme.md.
+
+==================================================
+19. PREVIEW
+==================================================
+
+Trước khi áp dụng toàn bộ deck:
+
+dùng card:
+
+T1_02_065_Echidna.png
+
+làm preview.
+
+Render ít nhất 2 phương án:
+
+Preview A:
+glass bubble trong suốt vừa phải
+
+Preview B:
+glass bubble trong hơn và border sáng hơn
+
+Lưu tại:
+
+Assets\_created\Preview_UI\
+
+Ví dụ:
+
+Echidna_glass_A.png
+Echidna_glass_B.png
+
+Không render toàn bộ deck cho đến khi style preview ổn.
+
+==================================================
+20. MỤC TIÊU CUỐI
+==================================================
+
+Card cuối phải có cảm giác:
+
+anime artwork + Splendor minimalist layout + Minecraft resources + elegant transparent glass UI.
+
+Không còn các ô đen đặc.
+
+Các bubble phải nhẹ, trong, bóng, đẹp.
+
+Number typography phải tạo cảm giác Minecraft ngay lập tức.
+
+Tên nhân vật dọc bên trái phải làm card trông giống một collectible custom board-game card nhưng vẫn sạch và dễ đọc.
+
+Card output phải là square 1:1.

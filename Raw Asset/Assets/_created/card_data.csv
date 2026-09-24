@@ -1,0 +1,91 @@
+﻿id,source_image,tier,points,bonus,quartz_cost,diamond_cost,emerald_cost,gold_cost,netherite_cost
+T1-01,Assets/Assets/Tier 1/043_Rei_Ayanami.png,1,0,netherite,1,1,1,1,0
+T1-02,Assets/Assets/Tier 1/065_Echidna.png,1,0,netherite,1,1,1,2,0
+T1-03,Assets/Assets/Tier 1/067_Maomao.png,1,0,netherite,2,0,1,2,0
+T1-04,Assets/Assets/Tier 1/068_Furina.png,1,0,netherite,0,1,0,3,1
+T1-05,Assets/Assets/Tier 1/069_Tatsumaki.png,1,0,netherite,0,0,2,1,0
+T1-06,Assets/Assets/Tier 1/070_Tsunade.png,1,0,netherite,2,0,2,0,0
+T1-07,Assets/Assets/Tier 1/071_Lucy_Heartfilia.png,1,0,netherite,0,0,3,0,0
+T1-08,Assets/Assets/Tier 1/072_Yuno_Gasai.png,1,1,netherite,0,4,0,0,0
+T1-09,Assets/Assets/Tier 1/074_Ai_Hayasaka.png,1,0,diamond,1,0,1,1,1
+T1-10,Assets/Assets/Tier 1/075_Itsuki_Nakano.png,1,0,diamond,1,0,1,2,1
+T1-11,Assets/Assets/Tier 1/076_Hestia.png,1,0,diamond,1,0,2,2,0
+T1-12,Assets/Assets/Tier 1/077_Kyouko_Hori.png,1,0,diamond,0,1,3,1,0
+T1-13,Assets/Assets/Tier 1/078_Yae_Miko.png,1,0,diamond,1,2,0,0,0
+T1-14,Assets/Assets/Tier 1/080_Fubuki.png,1,0,diamond,2,0,2,0,0
+T1-15,Assets/Assets/Tier 1/081_Touka_Kirishima.png,1,0,diamond,0,3,0,0,0
+T1-16,Assets/Assets/Tier 1/084_Rikka_Takanashi.png,1,1,diamond,0,0,0,4,0
+T1-17,Assets/Assets/Tier 1/085_Ai_Hoshino.png,1,0,quartz,0,1,1,1,1
+T1-18,Assets/Assets/Tier 1/086_Lucy.png,1,0,quartz,0,1,2,1,1
+T1-19,Assets/Assets/Tier 1/088_Madoka_Kaname.png,1,0,quartz,0,2,2,0,1
+T1-20,Assets/Assets/Tier 1/089_Yotsuba_Nakano.png,1,0,quartz,1,1,0,0,3
+T1-21,Assets/Assets/Tier 1/090_Hitori_Gotou.png,1,0,quartz,0,1,0,2,0
+T1-22,Assets/Assets/Tier 1/091_Ichigo.png,1,0,quartz,2,2,0,0,0
+T1-23,Assets/Assets/Tier 1/094_Fern.png.png,1,0,quartz,0,0,3,0,0
+T1-24,Assets/Assets/Tier 1/096_Chizuru_Ichinose.png,1,1,quartz,0,0,4,0,0
+T1-25,Assets/Assets/Tier 1/Aiz Wallenstein.png,1,0,emerald,1,1,0,1,1
+T1-26,Assets/Assets/Tier 1/Alice Synthesis Thirty.png,1,0,emerald,1,1,0,1,2
+T1-27,Assets/Assets/Tier 1/Alice_Nakiri.png,1,0,emerald,2,1,0,2,0
+T1-28,Assets/Assets/Tier 1/Bronya.png,1,0,emerald,1,0,3,1,0
+T1-29,Assets/Assets/Tier 1/Cha Hae-In.png,1,0,emerald,0,0,1,0,2
+T1-30,Assets/Assets/Tier 1/Chitoge Kirisaki.png,1,0,emerald,0,2,0,2,0
+T1-31,Assets/Assets/Tier 1/Columbina.png,1,0,emerald,0,0,0,3,0
+T1-32,Assets/Assets/Tier 1/homani_Ichinose.png,1,1,emerald,0,0,0,0,4
+T1-33,Assets/Assets/Tier 1/Kaoruko Waguri.png,1,0,gold,1,1,1,0,1
+T1-34,Assets/Assets/Tier 1/Krul Tepes.png,1,0,gold,2,1,1,0,1
+T1-35,Assets/Assets/Tier 1/Mashiro Shiina.png,1,0,gold,2,0,1,0,2
+T1-36,Assets/Assets/Tier 1/Milim Nava.png,1,0,gold,1,3,0,0,1
+T1-37,Assets/Assets/Tier 1/Ruby Hoshino.png,1,0,gold,0,0,2,1,0
+T1-38,Assets/Assets/Tier 1/Shinoa Hiiragi.png,1,0,gold,0,2,0,0,2
+T1-39,Assets/Assets/Tier 1/Vladilena Milizé.png,1,0,gold,0,0,0,0,3
+T1-40,Assets/Assets/Tier 1/Yunyun.png,1,1,gold,0,0,0,0,4
+T2-01,Assets/Assets/Tier 2/032_Hinata_Hyuuga.png,2,1,netherite,3,2,2,0,0
+T2-02,Assets/Assets/Tier 2/033_Rin_Tohsaka.png,2,1,netherite,3,2,0,0,2
+T2-03,Assets/Assets/Tier 2/034_Shiro.png,2,2,netherite,0,1,4,2,0
+T2-04,Assets/Assets/Tier 2/035_Chika_Fujiwara.png,2,2,netherite,0,0,5,3,0
+T2-05,Assets/Assets/Tier 2/036_Akeno_Himejima.png,2,2,netherite,5,0,0,0,0
+T2-06,Assets/Assets/Tier 2/038_Kaguya_Shinomiya.png,2,3,netherite,0,0,0,0,6
+T2-07,Assets/Assets/Tier 2/039_Yor_Forger.png,2,1,diamond,0,2,2,3,0
+T2-08,Assets/Assets/Tier 2/040_Erza_Scarlet.png,2,1,diamond,0,3,2,0,3
+T2-09,Assets/Assets/Tier 2/041_Kurumi_Tokisaki.png,2,2,diamond,5,0,3,0,0
+T2-10,Assets/Assets/Tier 2/042_Darkness.png,2,2,diamond,2,4,0,1,0
+T2-11,Assets/Assets/Tier 2/046_Mitsuri_Kanroji.png,2,2,diamond,0,0,5,0,0
+T2-12,Assets/Assets/Tier 2/047_Raphtalia.png,2,3,diamond,0,0,0,6,0
+T2-13,Assets/Assets/Tier 2/048_CC.png,2,1,quartz,0,0,3,2,2
+T2-14,Assets/Assets/Tier 2/049_Sinon.png,2,1,quartz,2,0,0,3,3
+T2-15,Assets/Assets/Tier 2/050_Ganyu.png,2,2,quartz,0,0,1,4,2
+T2-16,Assets/Assets/Tier 2/051_Komi_Shouko.png,2,2,quartz,0,3,0,5,0
+T2-17,Assets/Assets/Tier 2/052_Tohru.png,2,2,quartz,0,0,0,0,5
+T2-18,Assets/Assets/Tier 2/053_Gawr_Gura.png,2,3,quartz,0,0,0,0,6
+T2-19,Assets/Assets/Tier 2/057_Misa_Amane.png,2,1,emerald,3,0,0,3,2
+T2-20,Assets/Assets/Tier 2/059_Kanna_Kamui.png,2,1,emerald,2,3,0,0,2
+T2-21,Assets/Assets/Tier 2/061_Asuka_Langley_Soryu.png,2,2,emerald,0,2,0,0,4
+T2-22,Assets/Assets/Tier 2/Eris Boreas Greyrat.png,2,2,emerald,0,0,5,3,0
+T2-23,Assets/Assets/Tier 2/Ichika_Nanako.png,2,2,emerald,0,5,0,0,0
+T2-24,Assets/Assets/Tier 2/Kiana_Kaslana.png,2,3,emerald,0,0,6,0,0
+T2-25,Assets/Assets/Tier 2/Kosaki Onodera.png,2,1,gold,2,0,0,2,3
+T2-26,Assets/Assets/Tier 2/Nao_Tomori.png,2,1,gold,2,0,3,0,3
+T2-27,Assets/Assets/Tier 2/Raiden_Mei.png,2,2,gold,1,0,0,4,2
+T2-28,Assets/Assets/Tier 2/Roxy Migurdia.png,2,2,gold,0,0,0,3,5
+T2-29,Assets/Assets/Tier 2/sylphiette greyrat.png,2,2,gold,0,0,0,0,5
+T2-30,Assets/Assets/Tier 2/Wiz.png,2,3,gold,0,0,0,6,0
+T3-01,Assets/Assets/Tier 3/010_Ram_redrawn.png,3,3,netherite,3,3,5,3,0
+T3-02,Assets/Assets/Tier 3/013_Nezuko_Kamado_redrawn.png,3,4,netherite,0,0,0,7,0
+T3-03,Assets/Assets/Tier 3/014_Mai_Sakurajima_redrawn.png,3,4,netherite,3,0,0,6,3
+T3-04,Assets/Assets/Tier 3/015_Albedo_redrawn.png,3,5,netherite,3,0,0,7,0
+T3-05,Assets/Assets/Tier 3/016_Aqua_redrawn.png,3,3,diamond,3,0,3,3,5
+T3-06,Assets/Assets/Tier 3/018_Emilia_redrawn.png,3,4,diamond,7,0,0,0,0
+T3-07,Assets/Assets/Tier 3/019_2B_redrawn.png,3,4,diamond,6,3,0,0,3
+T3-08,Assets/Assets/Tier 3/020_Miku_Nakano_redrawn.png,3,5,diamond,7,0,0,0,3
+T3-09,Assets/Assets/Tier 3/021_Akame.png,3,3,quartz,0,3,3,3,5
+T3-10,Assets/Assets/Tier 3/023_Violet_Evergarden.png,3,4,quartz,0,0,0,0,7
+T3-11,Assets/Assets/Tier 3/024_hu_tao.png,3,4,quartz,3,6,0,0,3
+T3-12,Assets/Assets/Tier 3/025_Esdeath.png,3,5,quartz,0,7,0,0,3
+T3-13,Assets/Assets/Tier 3/026_Frieren.png,3,3,emerald,5,3,0,3,3
+T3-14,Assets/Assets/Tier 3/027_Marin_Kitagawa.png,3,4,emerald,0,7,0,0,0
+T3-15,Assets/Assets/Tier 3/028_Himiko_Toga.png,3,4,emerald,3,3,6,0,0
+T3-16,Assets/Assets/Tier 3/029_Reze.png,3,5,emerald,0,0,7,3,0
+T3-17,Assets/Assets/Tier 3/030_Yumeko_Jabami.png,3,3,gold,3,3,3,0,5
+T3-18,Assets/Assets/Tier 3/031_Nino_Nakano.png,3,4,gold,0,0,7,0,0
+T3-19,Assets/Assets/Tier 3/105_Kafka.png,3,4,gold,3,0,3,6,0
+T3-20,Assets/Assets/Tier 3/Elysia.png,3,5,gold,0,3,7,0,0

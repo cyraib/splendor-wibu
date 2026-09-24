@@ -1,0 +1,96 @@
+Hãy tạo một thẻ Quý tộc (Noble) theo phong cách Splendor, sử dụng ảnh nhân vật được cung cấp làm hình minh họa chính.
+
+Dùng đúng ảnh nhân vật được cung cấp, không được vẽ lại, không được đổi khuôn mặt, tóc, quần áo, biểu cảm hay màu sắc. Chỉ cắt và căn chỉnh ảnh vào trong khung thẻ.
+
+Bố cục:
+- thẻ hình vuông, bo góc nhẹ
+- bên trái là dải thông tin dọc màu trắng ngà
+- bên phải là ảnh chân dung nhân vật
+- không có tên nhân vật
+- không có chữ thừa
+
+Hiển thị ở góc trên trái số điểm danh vọng: "3"
+
+Bên dưới hiển thị các điều kiện Noble theo dạng ô vuông màu:
+- [MÀU_1] = [SỐ_1]
+- [MÀU_2] = [SỐ_2]
+- [MÀU_3] = [SỐ_3]
+
+Quy ước màu:
+white = trắng/ngà
+blue = xanh dương
+green = xanh lá
+red = đỏ
+black = đen
+
+Các ô điều kiện phải cùng kích thước, xếp dọc đều nhau, số ở giữa rõ ràng.
+
+Ảnh nhân vật phải được đặt chính giữa vùng ảnh, khuôn mặt rõ, không che phần số điểm và các ô điều kiện.
+
+Thêm texture nhẹ như thẻ board game in thật, giữ tổng thể sạch, sang, giống thẻ Noble của Splendor.
+
+Ràng buộc:
+- chỉ dùng ảnh đã cung cấp
+- không tạo nhân vật mới
+- không thay đổi khuôn mặt
+- không thêm phụ kiện không có sẵn
+- không thêm ô vàng
+- không thêm tiêu đề
+- không thêm tên nhân vật
+- không watermark
+
+
+
+Ví dụ 1: Noble kiểu 3-3-3
+Hãy tạo một thẻ Quý tộc (Noble) theo phong cách Splendor, sử dụng ảnh nhân vật được cung cấp làm hình minh họa chính.
+
+Dùng đúng ảnh nhân vật được cung cấp, không được vẽ lại, không được thay đổi khuôn mặt, tóc, quần áo, biểu cảm hay màu sắc. Chỉ cắt và đặt ảnh vào bố cục thẻ.
+
+Bố cục là thẻ hình vuông bo góc nhẹ. Bên trái là một dải thông tin dọc màu trắng ngà, bên phải là ảnh nhân vật chiếm phần lớn diện tích. Không có tên nhân vật, không có chữ thừa.
+
+Ở góc trên bên trái hiển thị số điểm danh vọng lớn: "3".
+
+Bên dưới hiển thị 3 ô điều kiện xếp dọc:
+- blue = 3
+- black = 3
+- white = 3
+
+Ô màu phải rõ ràng, đồng đều, số nằm chính giữa.
+
+Quy ước màu:
+white = trắng/ngà
+blue = xanh sapphire
+green = xanh lục bảo
+red = đỏ ruby
+black = đen/than
+
+Ảnh nhân vật phải được căn giữa, khuôn mặt rõ, giữ đúng ảnh gốc, không che phần thông tin bên trái. Thêm texture nhẹ như thẻ board game in thật. Tổng thể phải giống thẻ Noble của Splendor.
+
+Ví dụ 2: Noble kiểu 4-4
+Hãy tạo một thẻ Quý tộc (Noble) theo phong cách Splendor, sử dụng ảnh nhân vật được cung cấp làm hình minh họa chính.
+
+Dùng đúng ảnh nhân vật được cung cấp, không được vẽ lại hay thay đổi nhân vật. Chỉ cắt và đặt vào khung.
+
+Bố cục:
+- thẻ hình vuông bo góc nhẹ
+- cột thông tin dọc ở bên trái màu trắng ngà
+- ảnh chân dung nhân vật lớn ở bên phải
+- không có tên nhân vật
+- không có chữ thừa
+
+Hiển thị số điểm danh vọng lớn ở góc trên trái: "3"
+
+Bên dưới hiển thị 2 ô điều kiện xếp dọc:
+- red = 4
+- black = 4
+
+Ô điều kiện phải gọn, đẹp, rõ số, đồng nhất về kích thước.
+
+Giữ ảnh nhân vật nguyên bản, không đổi mặt, không đổi tóc, không thêm phụ kiện, không watermark. Tổng thể phải giống một thẻ Noble thật trong game Splendor.
+
+Đây là một phần của cả bộ thẻ. Hãy giữ chính xác cùng kích thước thẻ, độ rộng cột bên trái, vị trí số điểm, kích thước ô điều kiện, khoảng cách giữa các ô, lề, bo góc và phong cách trình bày cho tất cả các thẻ. Chỉ thay đổi ảnh nhân vật và màu/số điều kiện.
+
+
+
+
+

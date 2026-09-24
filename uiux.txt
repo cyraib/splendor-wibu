@@ -1,0 +1,70 @@
+PROMPT:
+Tôi đã build xong một web game Custom Splendor và đã có sẵn asset/card image.
+Giờ tôi muốn chỉnh lại UI để ảnh/card hiển thị to hơn khoảng x2, ưu tiên nhìn rõ nhân vật hơn trên màn hình Full HD (1920x1080) và cả các màn hình nhỏ hơn.
+Mục tiêu
+- Phóng to phần ảnh card lên khoảng 1.8x–2x so với hiện tại
+- Noble cards cũng phải to hơn rõ rệt để nhìn rõ ảnh nhân vật và cost/requirement
+- Toàn bộ giao diện phải gọn hơn, bớt khoảng trống thừa, để dành diện tích cho card art
+- Vẫn giữ được bố cục game dễ chơi, không làm rối mắt
+- Không sửa game logic, chỉ chỉnh layout / UI / CSS / responsive behavior
+Yêu cầu thiết kế
+1. Main cards (tier 1/2/3)
+   - Tăng kích thước card hiển thị lên khoảng 1.8x–2x
+   - Ưu tiên làm phần artwork bên trong card lớn hơn
+   - Giữ nguyên tỉ lệ card
+   - Cost icons và point số vẫn phải rõ, nhưng không chiếm quá nhiều diện tích ảnh
+   - Giảm khoảng cách giữa các card nếu cần để tận dụng không gian
+2. Nobles
+   - Tăng kích thước nobles lên khoảng 1.8x–2x
+   - Cost của nobles phải dễ đọc hơn
+   - Nếu cột bên phải quá chật, có thể:
+     - tăng chiều rộng sidebar, hoặc
+     - chuyển nobles thành grid 2x2 to hơn, hoặc
+     - đặt nobles ở một khu vực riêng rõ ràng hơn
+   - Mục tiêu: nhìn phát là thấy nhân vật noble và yêu cầu cost
+3. Tối ưu bố cục tổng thể
+   - Thu gọn header, player info, panel padding, margin, khoảng trống thừa
+   - Resource bank có thể compact hơn để nhường chỗ cho cards
+   - “My board” ở dưới cũng nên gọn hơn
+   - Tập trung diện tích màn hình cho board cards + noble cards
+4. Responsive cho Full HD
+   - Layout phải tối ưu trước cho 1920x1080
+   - Ngoài ra thêm breakpoint hợp lý cho:
+     - 1600px
+     - 1440px
+     - 1366px
+   - Trên màn hình nhỏ hơn, ưu tiên:
+     - giảm padding/gap trước
+     - rồi mới giảm card size nhẹ
+   - Không để card nhỏ như hiện tại
+5. Ưu tiên UX
+   - Người chơi phải nhìn rõ:
+     - chân dung nhân vật
+     - điểm card
+     - cost card
+     - noble requirements
+   - UI vẫn sạch, sang, dễ đọc
+   - Không làm text/icon chồng lấn
+Yêu cầu kỹ thuật
+- Hãy sửa trực tiếp ở mức component layout + CSS / Tailwind / style system hiện có
+- Nếu code đang dùng CSS variables, hãy tạo các biến kiểu:
+  - --card-scale
+  - --noble-scale
+  - --panel-gap
+  - --sidebar-width
+- Refactor nếu cần để việc scale card/noble dễ chỉnh sau này
+- Nếu cần, dùng grid-template-columns, clamp(), minmax() hoặc responsive flex/grid để bố cục đẹp hơn
+- Tránh hardcode kiểu vá tạm
+Kết quả tôi muốn
+- Card ảnh lớn hơn rõ rệt, khoảng x2
+- Noble lớn hơn rõ rệt
+- Bố cục gọn hơn, ít chỗ chết hơn
+- Dễ nhìn trên Full HD
+- Trả về cho tôi:
+  1. phần code đã sửa,
+  2. giải thích ngắn các thay đổi chính,
+  3. nếu có, liệt kê file/component nào đã chỉnh
+Lưu ý quan trọng
+- Không thay game logic
+- Không thay asset image
+- Chỉ tối ưu hiển thị UI để ảnh/card to hơn và rõ hơn

@@ -1,0 +1,1708 @@
+Bạn đang xây dựng một website board game multiplayer online theo gameplay Splendor để tôi và bạn bè có thể chơi trực tiếp qua Internet.
+
+==================================================
+MỤC TIÊU
+==================================================
+
+Tạo một website hoàn chỉnh có các chức năng:
+
+- Không yêu cầu đăng ký / đăng nhập.
+- Người chơi chỉ cần nhập nickname.
+- Có thể CREATE ROOM.
+- Room có Room Code.
+- Room có Invite Link.
+- Có thể copy Invite Link và gửi cho người khác.
+- Người nhận mở link → nhập nickname → vào phòng.
+- Hỗ trợ đầy đủ:
+  + 2 players
+  + 3 players
+  + 4 players
+- Multiplayer realtime.
+- Có reconnect khi refresh / mất mạng.
+- Server là nơi quyết định toàn bộ gameplay state.
+- Luật game lấy từ:
+  gamerule.txt
+- Các card artwork đã có tại:
+  Asset\_final
+- Hiện CHƯA có artwork cho các viên đá/token.
+- Website phải chơi được thực tế từ lúc tạo phòng cho tới khi kết thúc game.
+
+Không chỉ tạo UI mockup.
+Không chỉ scaffold project.
+Phải có gameplay thật và multiplayer thật.
+
+==================================================
+1. ASKME.MD
+==================================================
+
+Nếu trong quá trình làm có bất kỳ điều gì không xác định chắc chắn:
+
+- luật không rõ
+- card không map được
+- thiếu dữ liệu card
+- không biết asset nào tương ứng
+- nickname/file parsing không rõ
+- Noble requirement không rõ
+- gameplay có nhiều cách hiểu
+- gamerule.txt thiếu thông tin
+- cần user quyết định về UI/gameplay
+
+KHÔNG tự đoán.
+
+KHÔNG tự thay đổi gameplay.
+
+Ghi câu hỏi vào:
+
+askme.md
+
+Nếu chưa tồn tại thì tạo.
+
+Nếu đã tồn tại:
+append thêm câu hỏi, không xóa nội dung cũ.
+
+Format:
+
+# Questions
+
+## Q1
+Vấn đề:
+...
+
+Thông tin hiện có:
+...
+
+Các phương án:
+...
+
+Đề xuất mặc định:
+...
+
+Vẫn tiếp tục những phần khác không phụ thuộc vào câu hỏi đó.
+
+==================================================
+2. INSPECT PROJECT TRƯỚC
+==================================================
+
+Trước khi code:
+
+- Scan toàn bộ project.
+- Đọc đầy đủ gamerule.txt.
+- Scan Asset\_final.
+- Tìm tất cả metadata/data liên quan.
+
+Search các file:
+
+.json
+.csv
+.txt
+.xlsx
+.ts
+.js
+.py
+.cs
+.md
+
+Tìm các dữ liệu:
+
+tier
+points
+prestige
+bonus
+cost
+noble
+requirement
+quartz
+diamond
+emerald
+gold
+netherite
+joker
+
+Sau khi scan, in summary:
+
+- số development card
+- số Noble
+- số Tier 1
+- số Tier 2
+- số Tier 3
+- metadata đã tìm thấy
+- những thứ còn thiếu
+- warning nếu có
+
+==================================================
+3. SOURCE OF TRUTH
+==================================================
+
+Thứ tự ưu tiên:
+
+1. gamerule.txt
+2. dữ liệu gameplay/card có sẵn trong project
+3. verified Splendor base-game data nếu cần đối chiếu
+4. quyết định trong askme.md
+
+Nếu gamerule.txt khác luật Splendor tiêu chuẩn:
+gamerule.txt thắng.
+
+Không âm thầm sửa luật theo kiến thức bên ngoài.
+
+==================================================
+4. TECH STACK
+==================================================
+
+Ưu tiên:
+
+Frontend:
+- React
+- TypeScript
+- Vite
+
+Backend:
+- Node.js
+- TypeScript
+- Express
+- Socket.IO
+
+Validation:
+- Zod nếu phù hợp
+
+Testing:
+- Vitest
+
+Có thể dùng:
+- CSS Modules
+hoặc
+- Tailwind
+
+Chọn một cách và dùng thống nhất.
+
+Không cần:
+- login
+- OAuth
+- database users
+
+Phiên bản đầu có thể lưu active rooms trong server memory.
+
+Nhưng RoomState / GameState phải thiết kế để sau này có thể chuyển sang Redis/database.
+
+==================================================
+5. PROJECT STRUCTURE
+==================================================
+
+Tổ chức rõ ràng, ví dụ:
+
+/client
+/server
+/shared
+/tests
+
+shared/
+  types/
+  data/
+
+server/
+  game/
+  rooms/
+  sockets/
+
+client/
+  pages/
+  components/
+  hooks/
+  stores/
+
+Game engine phải tách khỏi React và Socket.IO.
+
+==================================================
+6. HOME PAGE
+==================================================
+
+Trang chủ:
+
+CUSTOM SPLENDOR
+
+Nickname:
+[____________]
+
+[ CREATE ROOM ]
+
+Room Code:
+[______]
+
+[ JOIN ROOM ]
+
+Không login.
+
+Nickname phải:
+
+- trim whitespace
+- không được rỗng
+- giới hạn độ dài hợp lý
+- sanitize trước khi hiển thị
+
+==================================================
+7. CREATE ROOM
+==================================================
+
+Khi người chơi click CREATE ROOM:
+
+Server tạo Room ID ngẫu nhiên khó đoán.
+
+Ví dụ:
+
+AB7KQ2
+
+Generate invite URL:
+
+/room/AB7KQ2
+
+Trong local dev:
+
+http://localhost:5173/room/AB7KQ2
+
+Lobby hiển thị:
+
+ROOM AB7KQ2
+
+[ COPY INVITE LINK ]
+
+Khi copy thành công:
+
+Copied!
+
+==================================================
+8. JOIN ROOM
+==================================================
+
+Có 2 cách:
+
+A.
+Nhập Room Code tại Home.
+
+B.
+Mở trực tiếp:
+
+/room/:roomId
+
+Nếu chưa có nickname:
+
+show modal:
+
+ENTER YOUR NAME
+
+Sau đó join room.
+
+Không redirect sang login.
+
+==================================================
+9. MODE 2 / 3 / 4 NGƯỜI
+==================================================
+
+Website phải support đầy đủ:
+
+- 2 Players
+- 3 Players
+- 4 Players
+
+Host chọn mode trong Lobby:
+
+GAME MODE
+
+[ 2 PLAYERS ]
+[ 3 PLAYERS ]
+[ 4 PLAYERS ]
+
+Không chỉ dùng "maximum 4 players".
+
+Game setup phải thực sự khác nhau theo số người nếu gamerule.txt quy định.
+
+==================================================
+10. START GAME CONDITIONS
+==================================================
+
+Nếu host chọn:
+
+2 Players
+→ phải có đúng 2 người mới Start.
+
+3 Players
+→ phải có đúng 3 người mới Start.
+
+4 Players
+→ phải có đúng 4 người mới Start.
+
+Nếu player count không khớp mode:
+
+disable START GAME
+
+và hiển thị rõ:
+
+Waiting for 1 more player
+
+hoặc:
+
+Too many players for selected mode
+
+Không tự chuyển mode nếu host chưa yêu cầu.
+
+==================================================
+11. PLAYER COUNT GAME SETUP
+==================================================
+
+Game engine phải có:
+
+getGameSetupForPlayerCount(playerCount)
+
+Ví dụ:
+
+getGameSetupForPlayerCount(2)
+
+getGameSetupForPlayerCount(3)
+
+getGameSetupForPlayerCount(4)
+
+Return config kiểu:
+
+{
+  playerCount,
+  tokenSupply,
+  nobleCount,
+  otherSettings
+}
+
+Đọc gamerule.txt để xác định chính xác setup.
+
+Nếu gamerule.txt tương ứng Splendor base game thì đối chiếu setup tiêu chuẩn:
+
+2 players:
+- 4 token mỗi màu thường
+- 5 Gold/Joker
+- 3 Noble face-up
+
+3 players:
+- 5 token mỗi màu thường
+- 5 Gold/Joker
+- 4 Noble face-up
+
+4 players:
+- 7 token mỗi màu thường
+- 5 Gold/Joker
+- 5 Noble face-up
+
+Noble face-up:
+player count + 1.
+
+NHƯNG gamerule.txt vẫn là source of truth cuối cùng.
+
+==================================================
+12. LOBBY
+==================================================
+
+Lobby hiển thị:
+
+- Room Code
+- Invite Link
+- Copy Link
+- Game Mode
+- Player list
+- Host
+- Connection status
+- Start Game
+
+Ví dụ:
+
+ROOM AB7KQ2
+
+Game Mode:
+3 Players
+
+Players:
+👑 Hieu
+Linh
+Phong
+
+3 / 3 Players
+
+[ COPY INVITE ]
+[ START GAME ]
+
+==================================================
+13. HOST
+==================================================
+
+Host là người tạo room.
+
+Host có quyền:
+
+- chọn mode
+- Start Game
+- quản lý lobby nếu cần
+
+Host KHÔNG có quyền:
+
+- tự cộng điểm
+- sửa token
+- bypass turn
+- sửa game state
+- cheat
+
+Nếu host disconnect:
+room không được chết ngay.
+
+Có thể transfer host cho player khác nếu cần.
+
+==================================================
+14. REALTIME MULTIPLAYER
+==================================================
+
+Dùng Socket.IO.
+
+Realtime cho:
+
+- join
+- leave
+- reconnect
+- mode change
+- start game
+- turn
+- token action
+- buy card
+- reserve card
+- Noble
+- score
+- game over
+
+Không dùng polling cho gameplay chính.
+
+==================================================
+15. SERVER AUTHORITATIVE
+==================================================
+
+YÊU CẦU BẮT BUỘC:
+
+SERVER LÀ TRỌNG TÀI DUY NHẤT.
+
+Client chỉ gửi intent.
+
+Ví dụ:
+
+game:takeTokens
+
+{
+  colors: [...]
+}
+
+game:buyCard
+
+{
+  cardId: "..."
+}
+
+game:reserveCard
+
+{
+  cardId: "..."
+}
+
+Server phải:
+
+1. kiểm tra player
+2. kiểm tra room
+3. kiểm tra turn
+4. kiểm tra action hợp lệ
+5. kiểm tra resource
+6. cập nhật GameState
+7. broadcast state mới
+
+Client không được gửi:
+
+- điểm mới
+- số token mới
+- card ownership mới
+- cost mới
+
+và yêu cầu server tin theo.
+
+==================================================
+16. SOCKET EVENTS
+==================================================
+
+Định nghĩa event types rõ ràng.
+
+Client → Server:
+
+room:create
+room:join
+room:leave
+room:setMode
+
+game:start
+game:takeTokens
+game:returnTokens
+game:buyCard
+game:reserveCard
+game:chooseNoble
+
+Server → Client:
+
+room:state
+room:error
+
+game:state
+game:error
+game:started
+game:ended
+
+player:joined
+player:left
+player:disconnected
+player:reconnected
+
+Shared TypeScript types cho payload.
+
+==================================================
+17. ANONYMOUS SESSION / RECONNECT
+==================================================
+
+Không có login nhưng vẫn phải reconnect đúng người.
+
+Khi join lần đầu:
+
+generate:
+
+playerSessionId
+
+Lưu trong localStorage.
+
+Khi refresh:
+
+client reconnect và gửi:
+
+roomId
+playerSessionId
+
+Nếu game còn tồn tại:
+
+restore đúng:
+
+- player
+- seat
+- cards
+- tokens
+- score
+- turn state
+
+Không tạo player mới chỉ vì refresh.
+
+==================================================
+18. DISCONNECT
+==================================================
+
+Nếu player mất mạng giữa game:
+
+không xóa player.
+
+Đánh dấu:
+
+Disconnected
+
+Giữ:
+
+- token
+- cards
+- reserved cards
+- points
+- seat
+
+Cho reconnect lại.
+
+==================================================
+19. GAME STATE
+==================================================
+
+Tạo types rõ:
+
+GameState
+RoomState
+PlayerState
+PublicPlayerState
+PrivatePlayerState
+DevelopmentCard
+Noble
+ResourceBank
+TurnState
+GamePhase
+
+Tránh dùng any cho core gameplay.
+
+==================================================
+20. GAME PHASE
+==================================================
+
+Dùng state machine rõ ràng.
+
+Ví dụ:
+
+LOBBY
+
+PLAYING
+
+AWAITING_TOKEN_RETURN
+
+AWAITING_NOBLE_SELECTION
+
+ROUND_ENDING
+
+FINISHED
+
+Không tạo hàng loạt boolean chồng chéo nếu state machine rõ hơn.
+
+==================================================
+21. GAME ENGINE
+==================================================
+
+Tạo game engine riêng.
+
+Ví dụ functions:
+
+createGame()
+
+startGame()
+
+getValidActions()
+
+takeTokens()
+
+returnTokens()
+
+buyCard()
+
+reserveCard()
+
+checkNobles()
+
+chooseNoble()
+
+endTurn()
+
+checkEndGame()
+
+calculateCardPrice()
+
+calculatePlayerDiscounts()
+
+Không phụ thuộc:
+
+React
+DOM
+Socket.IO
+
+Socket layer chỉ gọi game engine.
+
+==================================================
+22. GAMERULE.TXT
+==================================================
+
+Đọc đầy đủ gamerule.txt.
+
+Implement chính xác luật trong file.
+
+Không chỉ hardcode theo trí nhớ Splendor.
+
+Tạo:
+
+server/game/rules.ts
+
+Các constant/rules phải dễ truy vết về gamerule.txt.
+
+Nếu luật không rõ:
+ghi askme.md.
+
+==================================================
+23. GAMEPLAY SPLENDOR
+==================================================
+
+Nếu gamerule.txt tương ứng Splendor base game, game engine cần hỗ trợ:
+
+- lấy 3 token khác màu
+- lấy 2 token cùng màu nếu bank đủ điều kiện
+- mua face-up development card
+- mua reserved card
+- reserve face-up card
+- reserve top card của tier nếu luật cho
+- nhận Joker khi reserve nếu còn
+- permanent bonus giảm cost
+- Joker thay resource thiếu
+- giới hạn token
+- trả token khi vượt giới hạn
+- refill market
+- Noble visit
+- Prestige
+- trigger end game
+- hoàn thành vòng cuối
+- tie-break
+
+Nhưng luôn ưu tiên gamerule.txt.
+
+==================================================
+24. CARD ASSETS
+==================================================
+
+Card artwork nằm ở:
+
+Asset\_final
+
+Dùng đúng asset này.
+
+Không:
+
+- AI redraw
+- sửa artwork
+- thay nhân vật
+- generate card mới nếu không cần
+
+Serve image bằng HTTP static assets.
+
+Không gửi binary image qua Socket.IO.
+
+==================================================
+25. CARD MANIFEST
+==================================================
+
+Tìm metadata có sẵn trước.
+
+Nếu cần, tạo:
+
+shared/data/cards.json
+
+Ví dụ:
+
+{
+  "id": "T1_001",
+  "tier": 1,
+  "image": "...",
+  "points": 0,
+  "bonus": "diamond",
+  "cost": {
+    "quartz": 1,
+    "diamond": 0,
+    "emerald": 2,
+    "gold": 1,
+    "netherite": 0
+  }
+}
+
+Noble:
+
+{
+  "id": "N001",
+  "type": "noble",
+  "image": "...",
+  "points": 3,
+  "requirement": {
+    ...
+  }
+}
+
+Không tự bịa gameplay values nếu thiếu.
+
+Nếu thiếu:
+ghi askme.md.
+
+==================================================
+26. RESOURCE SYSTEM
+==================================================
+
+Các resource custom hiện có:
+
+Quartz
+Diamond
+Emerald
+Gold
+Netherite
+
+Giữ mapping hiện tại của project.
+
+Nếu có Joker:
+đặt thành resource riêng:
+
+joker
+
+Không được nhầm Gold custom với Joker nếu Gold đang đại diện cho một màu development card.
+
+Đọc gamerule.txt / metadata để xác nhận.
+
+==================================================
+27. CHƯA CÓ ẢNH TOKEN
+==================================================
+
+Hiện chưa có artwork cho các viên đá.
+
+Không block project.
+
+Tạo temporary token bằng:
+
+CSS
+hoặc
+SVG
+
+Tạo component duy nhất:
+
+<ResourceToken />
+
+Ví dụ:
+
+<ResourceToken
+  type="diamond"
+  amount={4}
+/>
+
+Style temporary:
+
+Quartz:
+trắng / bạc sáng
+
+Diamond:
+xanh cyan
+
+Emerald:
+xanh lá
+
+Gold:
+vàng
+
+Netherite:
+đen/xám đậm
+
+Joker:
+theo rule/theme phù hợp
+
+Token phải:
+
+- nhìn rõ
+- đẹp
+- có chiều sâu nhẹ
+- hợp với UI card
+- dễ thay asset PNG sau này
+
+Ghi vào askme.md rằng token hiện đang là placeholder CSS/SVG.
+
+==================================================
+28. TOKEN ASSET REPLACEMENT
+==================================================
+
+Thiết kế sao cho sau này chỉ cần thêm:
+
+assets/resources/quartz.png
+assets/resources/diamond.png
+assets/resources/emerald.png
+assets/resources/gold.png
+assets/resources/netherite.png
+assets/resources/joker.png
+
+và chỉnh một mapping trung tâm.
+
+Không hardcode token asset trong nhiều component.
+
+==================================================
+29. GAME BOARD
+==================================================
+
+Desktop-first.
+
+Bố cục:
+
+NOBLES
+
+TIER 3
+[ Deck ] [ Card ] [ Card ] [ Card ] [ Card ]
+
+TIER 2
+[ Deck ] [ Card ] [ Card ] [ Card ] [ Card ]
+
+TIER 1
+[ Deck ] [ Card ] [ Card ] [ Card ] [ Card ]
+
+RESOURCE BANK
+
+OTHER PLAYERS
+
+MY BOARD
+
+Có thể điều chỉnh vị trí để đẹp hơn.
+
+==================================================
+30. VISUAL STYLE
+==================================================
+
+Style phù hợp với bộ card hiện tại:
+
+- premium boardgame table
+- dark wood / velvet background
+- glassmorphism
+- warm light
+- subtle gold/silver accent
+- anime cards là trọng tâm
+- sạch
+- hiện đại nhưng không sci-fi
+
+Không làm giống spreadsheet.
+
+Không làm UI quá rối.
+
+==================================================
+31. GAME CARD UI
+==================================================
+
+Component:
+
+<GameCard />
+
+Có:
+
+- image từ Asset\_final
+- hover enlarge
+- selection
+- affordable glow
+- disabled state
+- reserved state
+
+Nếu gameplay data đã hiển thị trên ảnh:
+không phủ lại quá nhiều text.
+
+Có thể tooltip:
+
+- points
+- bonus
+- cost
+
+==================================================
+32. PLAYER PANEL
+==================================================
+
+My Board hiển thị:
+
+Nickname
+
+Score
+
+Tokens
+
+Permanent bonuses
+
+Reserved cards
+
+Total token count
+
+Turn indicator
+
+==================================================
+33. OTHER PLAYERS
+==================================================
+
+Player khác hiển thị:
+
+Nickname
+Score
+Permanent bonuses
+Token counts nếu public
+Reserved count
+Connection status
+
+Không leak hidden card information.
+
+==================================================
+34. PRIVATE INFORMATION
+==================================================
+
+Nếu reserve top-deck card là hidden:
+
+Owner thấy full reserved card.
+
+Opponent chỉ thấy:
+
+Reserved Cards: 2
+
+Không broadcast toàn bộ secret card rồi hide bằng CSS.
+
+Tạo function:
+
+buildPlayerView(gameState, playerId)
+
+Server gửi state riêng cho từng player.
+
+==================================================
+35. TURN UI
+==================================================
+
+Khi đến lượt:
+
+YOUR TURN
+
+Highlight player.
+
+Chỉ enable action client-side nếu hợp lệ.
+
+NHƯNG server vẫn validate mọi action.
+
+==================================================
+36. TAKE TOKEN
+==================================================
+
+Player click token.
+
+UI hiển thị selection.
+
+Ví dụ:
+
+Selected:
+
+Diamond
+Emerald
+Quartz
+
+[ TAKE ]
+
+Hỗ trợ action lấy 2 token cùng màu nếu luật cho phép.
+
+Nếu invalid:
+hiển thị lý do.
+
+==================================================
+37. BUY CARD
+==================================================
+
+Khi click card:
+
+hiển thị:
+
+- artwork
+- points
+- bonus
+- base cost
+- discount
+- actual payment
+- Joker cần dùng
+
+[ BUY ]
+
+Nếu không đủ:
+button disabled.
+
+==================================================
+38. RESERVE
+==================================================
+
+Card có:
+
+[ RESERVE ]
+
+Nếu luật cho reserve top deck:
+
+Deck có:
+
+[ RESERVE TOP CARD ]
+
+Server xử lý hidden card.
+
+Nếu reserve nhận Joker:
+server cập nhật resource.
+
+==================================================
+39. TOKEN LIMIT
+==================================================
+
+Nếu player vượt token limit:
+
+GamePhase:
+
+AWAITING_TOKEN_RETURN
+
+Modal:
+
+RETURN TOKENS
+
+You have 12 tokens.
+Return 2.
+
+Không chuyển turn cho tới khi player trả hợp lệ.
+
+==================================================
+40. NOBLE
+==================================================
+
+Sau purchase:
+
+server check Noble.
+
+Nếu chỉ có 1 Noble hợp lệ:
+xử lý theo gamerule.
+
+Nếu có nhiều Noble và gamerule yêu cầu lựa chọn:
+
+GamePhase:
+
+AWAITING_NOBLE_SELECTION
+
+Show:
+
+CHOOSE A NOBLE
+
+Player chọn xong mới kết thúc turn.
+
+==================================================
+41. END GAME
+==================================================
+
+Implement theo gamerule.txt.
+
+Nếu rule tương ứng Splendor:
+
+- đạt threshold trigger end game
+- hoàn thành round
+- xác định winner
+- tie-break theo luật
+
+Game Over:
+
+🏆 WINNER
+
+Leaderboard:
+
+Player
+Points
+Cards
+
+Buttons:
+
+PLAY AGAIN
+BACK TO LOBBY
+
+==================================================
+42. PLAY AGAIN
+==================================================
+
+Có thể giữ:
+
+- Room
+- Player list
+- Host
+- Selected player mode
+
+Nhưng reset toàn bộ game state.
+
+Shuffle decks lại.
+
+==================================================
+43. ROOM FULL
+==================================================
+
+Room không được vượt 4 active players.
+
+Nếu room đủ 4:
+player thứ 5 không join như player.
+
+Không cần spectator mode ở version đầu.
+
+==================================================
+44. ROOM CLEANUP
+==================================================
+
+Room anonymous và temporary.
+
+RoomManager lưu:
+
+createdAt
+lastActivityAt
+
+Cleanup inactive rooms.
+
+Config timeout ở một nơi.
+
+Không hardcode rải rác.
+
+==================================================
+45. SECURITY
+==================================================
+
+- Secure random room ID.
+- Validate socket payload.
+- Sanitize nickname.
+- Không tin client game state.
+- Không path traversal.
+- Không expose local filesystem.
+- Không cho client tự chọn playerId của người khác.
+- Session ID phải đủ random.
+
+==================================================
+46. GAME TESTS
+==================================================
+
+Viết unit tests cho:
+
+- 2-player setup
+- 3-player setup
+- 4-player setup
+- turn rotation
+- take 3 different
+- take 2 same
+- invalid token action
+- purchase card
+- discount
+- Joker
+- reserve
+- reserve limit
+- token limit
+- Noble
+- end game
+- tie-break
+
+==================================================
+47. PLAYER COUNT TESTS
+==================================================
+
+Test riêng:
+
+2 Players:
+- token supply
+- Noble count
+- start condition
+- turn order
+
+3 Players:
+- token supply
+- Noble count
+- start condition
+- turn order
+
+4 Players:
+- token supply
+- Noble count
+- start condition
+- turn order
+
+Không chỉ test 4-player.
+
+==================================================
+48. MULTIPLAYER TEST
+==================================================
+
+Test:
+
+A create room.
+
+A chọn 3-player mode.
+
+B join invite.
+
+C join invite.
+
+A Start.
+
+A action.
+
+B và C nhận realtime update.
+
+B không được action khi tới lượt A.
+
+Refresh A.
+
+A reconnect đúng seat.
+
+Reserved hidden card của A không leak cho B/C.
+
+==================================================
+49. MANUAL E2E
+==================================================
+
+Trước khi coi là hoàn thành:
+
+Test ít nhất:
+
+- một game 2 người
+- một lobby/game 3 người
+- một lobby/game 4 người hoặc ít nhất verify full start/action flow
+
+Test bằng nhiều browser tabs/contexts.
+
+==================================================
+50. RESPONSIVE
+==================================================
+
+Ưu tiên:
+
+1920x1080
+1440x900
+Laptop
+Tablet landscape
+
+Mobile:
+ít nhất xem và thao tác gameplay cơ bản.
+
+Desktop vẫn là mục tiêu chính.
+
+==================================================
+51. ANIMATIONS
+==================================================
+
+Animation nhẹ:
+
+- card hover
+- token select
+- buy card
+- reserve
+- Noble arrive
+- current turn
+
+Khoảng:
+
+150–300 ms
+
+Không làm animation quá dài.
+
+==================================================
+52. ERROR UX
+==================================================
+
+Handle:
+
+Room not found
+Room full
+Wrong player count
+Game already started
+Not your turn
+Invalid token selection
+Cannot afford
+Reserve limit reached
+Invalid Noble
+Disconnected
+Reconnecting
+Server unavailable
+
+Không crash.
+
+==================================================
+53. DEV COMMANDS
+==================================================
+
+Ưu tiên root scripts:
+
+npm install
+
+npm run dev
+
+npm run test
+
+npm run build
+
+npm run start
+
+Nếu dùng workspaces:
+cấu hình sao cho một command chạy được client + server.
+
+==================================================
+54. ENV
+==================================================
+
+Tạo:
+
+.env.example
+
+Ví dụ:
+
+PORT=3001
+CLIENT_URL=http://localhost:5173
+VITE_SERVER_URL=http://localhost:3001
+
+Không commit secret.
+
+==================================================
+55. DEPLOYMENT
+==================================================
+
+Architecture phải deploy online được với WebSocket.
+
+README hướng dẫn deploy.
+
+Có thể target:
+
+Railway
+Render
+Fly.io
+VPS
+
+Không phụ thuộc vào serverless platform không hỗ trợ persistent Socket.IO/WebSocket tốt mà không giải thích.
+
+==================================================
+56. README
+==================================================
+
+README phải có:
+
+- project overview
+- install
+- dev
+- build
+- production
+- testing
+- room flow
+- invite link
+- player modes 2/3/4
+- reconnect
+- game engine
+- gamerule.txt
+- Asset\_final
+- temporary token assets
+- cách thay token artwork sau này
+- deploy guide
+
+==================================================
+57. CARD VALIDATION
+==================================================
+
+Validate card manifest:
+
+- ID unique
+- image exists
+- valid tier
+- valid points
+- valid bonus
+- cost >= 0
+- Noble requirement valid
+
+Nếu asset thiếu:
+error rõ.
+
+Không silently skip.
+
+==================================================
+58. PERFORMANCE
+==================================================
+
+Không gửi image binary qua Socket.IO.
+
+Serve images statically.
+
+Socket state chỉ gửi:
+
+cardId
+numbers
+state data
+
+Client map:
+
+cardId → image URL
+
+Preload card images hợp lý.
+
+==================================================
+59. KHÔNG SỬA ASSET GỐC
+==================================================
+
+Không overwrite:
+
+Asset\_final
+
+Nếu cần generated manifest:
+đặt ở folder data/generated riêng.
+
+==================================================
+60. IMPLEMENTATION ORDER
+==================================================
+
+Làm theo thứ tự:
+
+STEP 1
+Inspect project.
+
+STEP 2
+Read gamerule.txt completely.
+
+STEP 3
+Inspect Asset\_final.
+
+STEP 4
+Find / create card manifest.
+
+STEP 5
+Write unresolved issues into askme.md.
+
+STEP 6
+Create shared TypeScript types.
+
+STEP 7
+Implement player-count-aware setup.
+
+STEP 8
+Implement game engine.
+
+STEP 9
+Write engine tests.
+
+STEP 10
+Implement RoomManager.
+
+STEP 11
+Implement Socket.IO protocol.
+
+STEP 12
+Implement anonymous session + reconnect.
+
+STEP 13
+Build Home page.
+
+STEP 14
+Build Create/Join Room.
+
+STEP 15
+Build 2/3/4 player mode selector.
+
+STEP 16
+Build Lobby.
+
+STEP 17
+Build Game Board.
+
+STEP 18
+Connect actual Asset\_final cards.
+
+STEP 19
+Create temporary CSS/SVG token assets.
+
+STEP 20
+Implement take/buy/reserve/Noble/return-token.
+
+STEP 21
+Implement private player views.
+
+STEP 22
+Implement end game.
+
+STEP 23
+Run unit tests.
+
+STEP 24
+Run multiplayer integration tests.
+
+STEP 25
+Run manual browser-tab test.
+
+STEP 26
+Fix bugs.
+
+STEP 27
+Production build.
+
+STEP 28
+Write/update README.
+
+==================================================
+61. DEFINITION OF DONE
+==================================================
+
+Task chỉ được coi là hoàn thành khi:
+
+Tôi chạy website.
+
+Nhập nickname.
+
+Create Room.
+
+Chọn:
+
+2 Players
+hoặc
+3 Players
+hoặc
+4 Players.
+
+Copy Invite Link.
+
+Bạn tôi mở link.
+
+Nhập nickname.
+
+Join room.
+
+Đủ số player theo mode.
+
+Host Start Game.
+
+Game setup đúng theo số người.
+
+Các player thấy cùng board realtime.
+
+Turn hoạt động đúng.
+
+Lấy token hoạt động.
+
+Mua card hoạt động.
+
+Reserve hoạt động.
+
+Discount hoạt động.
+
+Noble hoạt động.
+
+Hidden data không bị leak.
+
+Refresh reconnect đúng seat.
+
+Game kết thúc đúng luật.
+
+Winner được xác định.
+
+Có thể Play Again.
+
+Không cần account.
+
+==================================================
+62. FINAL REPORT
+==================================================
+
+Khi hoàn thành, báo:
+
+- Tech stack
+- gamerule.txt status
+- card assets detected
+- card manifest status
+- Noble status
+- 2-player mode status
+- 3-player mode status
+- 4-player mode status
+- room creation status
+- invite link status
+- realtime status
+- reconnect status
+- hidden-state protection status
+- tests passed / failed
+- production build status
+- temporary token status
+- askme.md unresolved questions
+- command để chạy
+- local URL
+
+==================================================
+63. QUALITY TARGET
+==================================================
+
+Mục tiêu cuối cùng là một boardgame online thực sự usable:
+
+Tôi có thể tạo phòng trong vài giây.
+
+Chọn chơi 2, 3 hoặc 4 người.
+
+Gửi link cho bạn bè.
+
+Không ai cần đăng nhập.
+
+Mọi người vào phòng bằng nickname.
+
+Game chạy realtime.
+
+Server enforce luật.
+
+Artwork dùng chính các card trong Asset\_final.
+
+Gameplay dùng gamerule.txt.
+
+Website đẹp, rõ, ổn định và đủ tốt để chúng tôi thực sự chơi Splendor cùng nhau qua Internet.

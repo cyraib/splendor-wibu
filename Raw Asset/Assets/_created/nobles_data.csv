@@ -1,0 +1,11 @@
+﻿id,source_image,points,quartz_req,diamond_req,emerald_req,gold_req,netherite_req
+N-01,Assets/Assets/Nobles/001_Zero_Two.png,3,0,0,4,4,0
+N-02,Assets/Assets/Nobles/002_Rem.png,3,0,4,4,0,0
+N-03,Assets/Assets/Nobles/003_Hatsune_Miku.png,3,4,4,0,0,0
+N-04,Assets/Assets/Nobles/004_Megumin.png,3,4,0,0,0,4
+N-05,Assets/Assets/Nobles/006_Asuna.png,3,0,0,0,4,4
+N-06,Assets/Assets/Nobles/007_Rias_Gremory.png,3,0,3,3,3,0
+N-07,Assets/Assets/Nobles/008_Artoria_Pendragon.png,3,3,0,3,3,0
+N-08,Assets/Assets/Nobles/009_Power.png,3,3,3,0,0,3
+N-09,Assets/Assets/Nobles/011_Makima.png,3,0,0,3,3,3
+N-10,Assets/Assets/Nobles/Mikasa.png,3,3,3,3,0,0
